@@ -1,0 +1,586 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		6335C64C1F054E4C009DA84D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6335C64B1F054E4C009DA84D /* AppDelegate.swift */; };
+		6335C6511F054E4C009DA84D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6335C64F1F054E4C009DA84D /* Main.storyboard */; };
+		6335C6541F054E4C009DA84D /* myApri.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6335C6521F054E4C009DA84D /* myApri.xcdatamodeld */; };
+		6335C6561F054E4C009DA84D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6335C6551F054E4C009DA84D /* Assets.xcassets */; };
+		6335C6591F054E4C009DA84D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6335C6571F054E4C009DA84D /* LaunchScreen.storyboard */; };
+		6335C6641F054E4D009DA84D /* myApriTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6335C6631F054E4D009DA84D /* myApriTests.swift */; };
+		6335C66F1F054E4D009DA84D /* myApriUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6335C66E1F054E4D009DA84D /* myApriUITests.swift */; };
+		6335C67D1F055275009DA84D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6335C67C1F055275009DA84D /* ViewController.swift */; };
+		6335C67F1F05528E009DA84D /* FoodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6335C67E1F05528E009DA84D /* FoodViewController.swift */; };
+		6335C6811F0552A6009DA84D /* BuyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6335C6801F0552A6009DA84D /* BuyViewController.swift */; };
+		6335C6831F055950009DA84D /* FoodEditeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6335C6821F055950009DA84D /* FoodEditeViewController.swift */; };
+		6335C6851F055967009DA84D /* BuyEditeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6335C6841F055967009DA84D /* BuyEditeViewController.swift */; };
+		63B68F711F0647BC00984B6D /* BuyData+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B68F6D1F0647BC00984B6D /* BuyData+CoreDataClass.swift */; };
+		63B68F721F0647BC00984B6D /* BuyData+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B68F6E1F0647BC00984B6D /* BuyData+CoreDataProperties.swift */; };
+		63B68F731F0647BC00984B6D /* FoodData+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B68F6F1F0647BC00984B6D /* FoodData+CoreDataClass.swift */; };
+		63B68F741F0647BC00984B6D /* FoodData+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B68F701F0647BC00984B6D /* FoodData+CoreDataProperties.swift */; };
+		63C6AF821F0633A9000C62BB /* CameraTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C6AF811F0633A9000C62BB /* CameraTableViewCell.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		6335C6601F054E4D009DA84D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6335C6401F054E4C009DA84D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6335C6471F054E4C009DA84D;
+			remoteInfo = myApri;
+		};
+		6335C66B1F054E4D009DA84D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6335C6401F054E4C009DA84D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6335C6471F054E4C009DA84D;
+			remoteInfo = myApri;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		6335C6481F054E4C009DA84D /* myApri.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = myApri.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6335C64B1F054E4C009DA84D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		6335C6501F054E4C009DA84D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		6335C6531F054E4C009DA84D /* myApri.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = myApri.xcdatamodel; sourceTree = "<group>"; };
+		6335C6551F054E4C009DA84D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		6335C6581F054E4C009DA84D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		6335C65A1F054E4C009DA84D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6335C65F1F054E4D009DA84D /* myApriTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = myApriTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		6335C6631F054E4D009DA84D /* myApriTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myApriTests.swift; sourceTree = "<group>"; };
+		6335C6651F054E4D009DA84D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6335C66A1F054E4D009DA84D /* myApriUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = myApriUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		6335C66E1F054E4D009DA84D /* myApriUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myApriUITests.swift; sourceTree = "<group>"; };
+		6335C6701F054E4D009DA84D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6335C67C1F055275009DA84D /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		6335C67E1F05528E009DA84D /* FoodViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoodViewController.swift; sourceTree = "<group>"; };
+		6335C6801F0552A6009DA84D /* BuyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuyViewController.swift; sourceTree = "<group>"; };
+		6335C6821F055950009DA84D /* FoodEditeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoodEditeViewController.swift; sourceTree = "<group>"; };
+		6335C6841F055967009DA84D /* BuyEditeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuyEditeViewController.swift; sourceTree = "<group>"; };
+		63B68F6D1F0647BC00984B6D /* BuyData+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "BuyData+CoreDataClass.swift"; sourceTree = "<group>"; };
+		63B68F6E1F0647BC00984B6D /* BuyData+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "BuyData+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		63B68F6F1F0647BC00984B6D /* FoodData+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FoodData+CoreDataClass.swift"; sourceTree = "<group>"; };
+		63B68F701F0647BC00984B6D /* FoodData+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FoodData+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		63C6AF811F0633A9000C62BB /* CameraTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraTableViewCell.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		6335C6451F054E4C009DA84D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6335C65C1F054E4D009DA84D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6335C6671F054E4D009DA84D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		6335C63F1F054E4C009DA84D = {
+			isa = PBXGroup;
+			children = (
+				63B68F6D1F0647BC00984B6D /* BuyData+CoreDataClass.swift */,
+				63B68F6E1F0647BC00984B6D /* BuyData+CoreDataProperties.swift */,
+				63B68F6F1F0647BC00984B6D /* FoodData+CoreDataClass.swift */,
+				63B68F701F0647BC00984B6D /* FoodData+CoreDataProperties.swift */,
+				6335C64A1F054E4C009DA84D /* myApri */,
+				6335C6621F054E4D009DA84D /* myApriTests */,
+				6335C66D1F054E4D009DA84D /* myApriUITests */,
+				6335C6491F054E4C009DA84D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		6335C6491F054E4C009DA84D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6335C6481F054E4C009DA84D /* myApri.app */,
+				6335C65F1F054E4D009DA84D /* myApriTests.xctest */,
+				6335C66A1F054E4D009DA84D /* myApriUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		6335C64A1F054E4C009DA84D /* myApri */ = {
+			isa = PBXGroup;
+			children = (
+				6335C67C1F055275009DA84D /* ViewController.swift */,
+				6335C64B1F054E4C009DA84D /* AppDelegate.swift */,
+				63C6AF811F0633A9000C62BB /* CameraTableViewCell.swift */,
+				6335C6801F0552A6009DA84D /* BuyViewController.swift */,
+				6335C6821F055950009DA84D /* FoodEditeViewController.swift */,
+				6335C64F1F054E4C009DA84D /* Main.storyboard */,
+				6335C67E1F05528E009DA84D /* FoodViewController.swift */,
+				6335C6841F055967009DA84D /* BuyEditeViewController.swift */,
+				6335C6551F054E4C009DA84D /* Assets.xcassets */,
+				6335C6571F054E4C009DA84D /* LaunchScreen.storyboard */,
+				6335C65A1F054E4C009DA84D /* Info.plist */,
+				6335C6521F054E4C009DA84D /* myApri.xcdatamodeld */,
+			);
+			path = myApri;
+			sourceTree = "<group>";
+		};
+		6335C6621F054E4D009DA84D /* myApriTests */ = {
+			isa = PBXGroup;
+			children = (
+				6335C6631F054E4D009DA84D /* myApriTests.swift */,
+				6335C6651F054E4D009DA84D /* Info.plist */,
+			);
+			path = myApriTests;
+			sourceTree = "<group>";
+		};
+		6335C66D1F054E4D009DA84D /* myApriUITests */ = {
+			isa = PBXGroup;
+			children = (
+				6335C66E1F054E4D009DA84D /* myApriUITests.swift */,
+				6335C6701F054E4D009DA84D /* Info.plist */,
+			);
+			path = myApriUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		6335C6471F054E4C009DA84D /* myApri */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6335C6731F054E4D009DA84D /* Build configuration list for PBXNativeTarget "myApri" */;
+			buildPhases = (
+				6335C6441F054E4C009DA84D /* Sources */,
+				6335C6451F054E4C009DA84D /* Frameworks */,
+				6335C6461F054E4C009DA84D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = myApri;
+			productName = myApri;
+			productReference = 6335C6481F054E4C009DA84D /* myApri.app */;
+			productType = "com.apple.product-type.application";
+		};
+		6335C65E1F054E4D009DA84D /* myApriTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6335C6761F054E4D009DA84D /* Build configuration list for PBXNativeTarget "myApriTests" */;
+			buildPhases = (
+				6335C65B1F054E4D009DA84D /* Sources */,
+				6335C65C1F054E4D009DA84D /* Frameworks */,
+				6335C65D1F054E4D009DA84D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6335C6611F054E4D009DA84D /* PBXTargetDependency */,
+			);
+			name = myApriTests;
+			productName = myApriTests;
+			productReference = 6335C65F1F054E4D009DA84D /* myApriTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		6335C6691F054E4D009DA84D /* myApriUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6335C6791F054E4D009DA84D /* Build configuration list for PBXNativeTarget "myApriUITests" */;
+			buildPhases = (
+				6335C6661F054E4D009DA84D /* Sources */,
+				6335C6671F054E4D009DA84D /* Frameworks */,
+				6335C6681F054E4D009DA84D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6335C66C1F054E4D009DA84D /* PBXTargetDependency */,
+			);
+			name = myApriUITests;
+			productName = myApriUITests;
+			productReference = 6335C66A1F054E4D009DA84D /* myApriUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		6335C6401F054E4C009DA84D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = "Yuka Saito";
+				TargetAttributes = {
+					6335C6471F054E4C009DA84D = {
+						CreatedOnToolsVersion = 8.3.2;
+						ProvisioningStyle = Automatic;
+					};
+					6335C65E1F054E4D009DA84D = {
+						CreatedOnToolsVersion = 8.3.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 6335C6471F054E4C009DA84D;
+					};
+					6335C6691F054E4D009DA84D = {
+						CreatedOnToolsVersion = 8.3.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 6335C6471F054E4C009DA84D;
+					};
+				};
+			};
+			buildConfigurationList = 6335C6431F054E4C009DA84D /* Build configuration list for PBXProject "myApri" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 6335C63F1F054E4C009DA84D;
+			productRefGroup = 6335C6491F054E4C009DA84D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				6335C6471F054E4C009DA84D /* myApri */,
+				6335C65E1F054E4D009DA84D /* myApriTests */,
+				6335C6691F054E4D009DA84D /* myApriUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		6335C6461F054E4C009DA84D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6335C6591F054E4C009DA84D /* LaunchScreen.storyboard in Resources */,
+				6335C6561F054E4C009DA84D /* Assets.xcassets in Resources */,
+				6335C6511F054E4C009DA84D /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6335C65D1F054E4D009DA84D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6335C6681F054E4D009DA84D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		6335C6441F054E4C009DA84D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				63B68F711F0647BC00984B6D /* BuyData+CoreDataClass.swift in Sources */,
+				63C6AF821F0633A9000C62BB /* CameraTableViewCell.swift in Sources */,
+				63B68F721F0647BC00984B6D /* BuyData+CoreDataProperties.swift in Sources */,
+				6335C6831F055950009DA84D /* FoodEditeViewController.swift in Sources */,
+				6335C67D1F055275009DA84D /* ViewController.swift in Sources */,
+				6335C6811F0552A6009DA84D /* BuyViewController.swift in Sources */,
+				6335C6541F054E4C009DA84D /* myApri.xcdatamodeld in Sources */,
+				63B68F741F0647BC00984B6D /* FoodData+CoreDataProperties.swift in Sources */,
+				6335C6851F055967009DA84D /* BuyEditeViewController.swift in Sources */,
+				6335C67F1F05528E009DA84D /* FoodViewController.swift in Sources */,
+				63B68F731F0647BC00984B6D /* FoodData+CoreDataClass.swift in Sources */,
+				6335C64C1F054E4C009DA84D /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6335C65B1F054E4D009DA84D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6335C6641F054E4D009DA84D /* myApriTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6335C6661F054E4D009DA84D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6335C66F1F054E4D009DA84D /* myApriUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		6335C6611F054E4D009DA84D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6335C6471F054E4C009DA84D /* myApri */;
+			targetProxy = 6335C6601F054E4D009DA84D /* PBXContainerItemProxy */;
+		};
+		6335C66C1F054E4D009DA84D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6335C6471F054E4C009DA84D /* myApri */;
+			targetProxy = 6335C66B1F054E4D009DA84D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		6335C64F1F054E4C009DA84D /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6335C6501F054E4C009DA84D /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		6335C6571F054E4C009DA84D /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6335C6581F054E4C009DA84D /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		6335C6711F054E4D009DA84D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		6335C6721F054E4D009DA84D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		6335C6741F054E4D009DA84D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = myApri/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.yukasaito.myApri;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		6335C6751F054E4D009DA84D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = myApri/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.yukasaito.myApri;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		6335C6771F054E4D009DA84D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = myApriTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.yukasaito.myApriTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/myApri.app/myApri";
+			};
+			name = Debug;
+		};
+		6335C6781F054E4D009DA84D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = myApriTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.yukasaito.myApriTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/myApri.app/myApri";
+			};
+			name = Release;
+		};
+		6335C67A1F054E4D009DA84D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				INFOPLIST_FILE = myApriUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.yukasaito.myApriUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = myApri;
+			};
+			name = Debug;
+		};
+		6335C67B1F054E4D009DA84D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				INFOPLIST_FILE = myApriUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.yukasaito.myApriUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = myApri;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		6335C6431F054E4C009DA84D /* Build configuration list for PBXProject "myApri" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6335C6711F054E4D009DA84D /* Debug */,
+				6335C6721F054E4D009DA84D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6335C6731F054E4D009DA84D /* Build configuration list for PBXNativeTarget "myApri" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6335C6741F054E4D009DA84D /* Debug */,
+				6335C6751F054E4D009DA84D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6335C6761F054E4D009DA84D /* Build configuration list for PBXNativeTarget "myApriTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6335C6771F054E4D009DA84D /* Debug */,
+				6335C6781F054E4D009DA84D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6335C6791F054E4D009DA84D /* Build configuration list for PBXNativeTarget "myApriUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6335C67A1F054E4D009DA84D /* Debug */,
+				6335C67B1F054E4D009DA84D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		6335C6521F054E4C009DA84D /* myApri.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				6335C6531F054E4C009DA84D /* myApri.xcdatamodel */,
+			);
+			currentVersion = 6335C6531F054E4C009DA84D /* myApri.xcdatamodel */;
+			path = myApri.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 6335C6401F054E4C009DA84D /* Project object */;
+}
