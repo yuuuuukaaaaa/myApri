@@ -14,7 +14,7 @@ class FoodViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     
     @IBOutlet weak var myTableView: UITableView!
     
-    var foodArray = ["じゃがいも","にんじん","玉ねぎ"]
+    var foodArray = ["じゃがいも"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
