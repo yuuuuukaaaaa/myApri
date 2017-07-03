@@ -12,32 +12,72 @@ import CoreData
 class BuyViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
     
     
+    
     @IBOutlet weak var myTableView2: UITableView!
 
-    var buyArray = ["ほうれん草","うどん","マーガリン"]
+    var tasks : [BuyData] = []
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        myTableView2.dataSource = self
+        myTableView2.delegate = self
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        //coredataからのデータ取得
+        getData()
+        //テーブルビューへのリロード
+        myTableView2.reloadData()
+    }
     //行数
     //-> Int：戻り値のデータ型はInt型ですという意味　ついているものは戻り値がある
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return buyArray.count
+        return tasks.count
     }
     //表示するセルの中身
     // リストに表示する文字列行数を決定表示
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+        let cell = UITableViewCell()
+        let task = tasks[indexPath.row]
+        
+        cell.textLabel?.text = task.name!
+
         //       色を青にする
         cell.textLabel?.textColor = UIColor.blue
         
         
-        cell.textLabel?.text = buyArray[indexPath.row]
+        
+    
+        
+        
         
         return cell
     }
+    
+    func getData() {
+        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        do {
+            tasks = try context.fetch(BuyData.fetchRequest())
+        }
+        catch{
+            print("Fetching Failed")
+        }
+    }
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        
+        if editingStyle == .delete{
+            let task = tasks[indexPath.row]
+            context.delete(task)
+            (UIApplication.shared.delegate as! AppDelegate).saveContext()
+            do {
+                tasks = try context.fetch(BuyData.fetchRequest())
+            }catch{
+                print("Fetching Failed")
+            }
+        }
+        tableView.reloadData()
+    }
+
 
 
     override func didReceiveMemoryWarning() {

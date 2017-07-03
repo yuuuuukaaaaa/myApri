@@ -2,7 +2,7 @@
 //  BuyData+CoreDataProperties.swift
 //  myApri
 //
-//  Created by MacUser on 2017/06/30.
+//  Created by MacUser on 2017/07/03.
 //  Copyright © 2017年 Yuka Saito. All rights reserved.
 //
 
@@ -16,7 +16,7 @@ extension BuyData {
         return NSFetchRequest<BuyData>(entityName: "BuyData")
     }
 
-    @NSManaged public var name: String?
     @NSManaged public var dose: String?
+    @NSManaged public var name: String?
 
 }
