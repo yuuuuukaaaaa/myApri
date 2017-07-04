@@ -34,14 +34,32 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="50" id="cg9-Wz-9z7">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="50" id="cg9-Wz-9z7" customClass="customCell" customModule="myApri" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="320" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cg9-Wz-9z7" id="odO-WE-izp">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ba2-Gw-WBT">
+                                                    <rect key="frame" x="50" y="8" width="107" height="34"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wiN-g3-zno">
+                                                    <rect key="frame" x="194" y="8" width="74" height="34"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="doseTaxtLabel" destination="wiN-g3-zno" id="uAp-wc-P0P"/>
+                                            <outlet property="foodTextLabel" destination="ba2-Gw-WBT" id="hPH-1u-Ipo"/>
                                             <segue destination="xeO-TU-LED" kind="show" id="lR8-LY-cQS"/>
                                         </connections>
                                     </tableViewCell>
@@ -112,7 +130,7 @@
                                 </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nqn-q9-xix">
-                                <rect key="frame" x="273" y="64" width="31" height="30"/>
+                                <rect key="frame" x="273" y="72" width="31" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="保存"/>
                                 <connections>
@@ -131,7 +149,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bNG-wc-jHe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1041" y="2033"/>
+            <point key="canvasLocation" x="954" y="2100"/>
         </scene>
         <!--Buy Edite View Controller-->
         <scene sceneID="iTc-vS-IBW">
@@ -149,7 +167,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vGc-wh-skX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1942" y="1236"/>
+            <point key="canvasLocation" x="1941" y="1200"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="VE5-VI-wse">
@@ -244,7 +262,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YTm-m7-5ir" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1980" y="-353.75"/>
+            <point key="canvasLocation" x="2732" y="390"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="NJX-YM-mH4">
@@ -262,7 +280,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mnL-MY-hUw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2873" y="-376"/>
+            <point key="canvasLocation" x="2732" y="-401"/>
         </scene>
         <!--食材リスト-->
         <scene sceneID="2Hl-PZ-efe">
@@ -315,7 +333,7 @@
                                     <segue destination="Wu0-ME-Bnl" kind="show" id="9KR-XU-o7t"/>
                                 </connections>
                             </barButtonItem>
-                            <barButtonItem title="バーコード" id="BJg-N7-VEC">
+                            <barButtonItem image="barcode" id="BJg-N7-VEC">
                                 <connections>
                                     <segue destination="BrH-zM-qji" kind="show" id="9wv-id-a0R"/>
                                 </connections>
@@ -328,7 +346,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tKn-Iq-HiK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1980" y="366.25"/>
+            <point key="canvasLocation" x="1941" y="366"/>
         </scene>
         <!--Food Edite View Controller-->
         <scene sceneID="3Jf-Nf-1oL">
@@ -346,7 +364,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NVc-P4-tuH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3010" y="367"/>
+            <point key="canvasLocation" x="2732" y="1200"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="r9V-Lb-iVP">
@@ -370,7 +388,7 @@
         <scene sceneID="GZv-hH-7Mx">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="CGI-w0-XVK" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="食材リスト" id="at6-Ub-F11"/>
+                    <tabBarItem key="tabBarItem" title="食材リスト" image="tomato" id="at6-Ub-F11"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="aBN-ew-sDO">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -389,7 +407,7 @@
         <scene sceneID="a8m-JT-hbU">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="XK5-dZ-HJi" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="買い物リスト" id="XVQ-Sn-X8M"/>
+                    <tabBarItem key="tabBarItem" title="買い物リスト" image="cart" id="XVQ-Sn-X8M"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="GIr-mw-u4W">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -410,4 +428,9 @@
             <point key="canvasLocation" x="16.800000000000001" y="1235.5322338830586"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="barcode" width="25" height="25"/>
+        <image name="cart" width="25" height="25"/>
+        <image name="tomato" width="25" height="25"/>
+    </resources>
 </document>

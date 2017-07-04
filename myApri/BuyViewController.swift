@@ -36,6 +36,16 @@ class BuyViewController: UIViewController,UITableViewDelegate,UITableViewDataSou
     //表示するセルの中身
     // リストに表示する文字列行数を決定表示
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        
+        let apple = customCell()
+        
+//        cell1.foodTextLabel.text = tasks[indexPath.row].name!
+//
+//        cell1.doseTaxtLabel.text = tasks[indexPath.row].name!
+//        
+        
+        
         let cell = UITableViewCell()
         let task = tasks[indexPath.row]
         
@@ -45,14 +55,9 @@ class BuyViewController: UIViewController,UITableViewDelegate,UITableViewDataSou
         cell.textLabel?.textColor = UIColor.blue
         
         
-        
-    
-        
-        
-        
         return cell
     }
-    
+    //データの読み込処理
     func getData() {
         let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
         do {
