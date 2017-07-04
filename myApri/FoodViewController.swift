@@ -14,12 +14,22 @@ class FoodViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     
     @IBOutlet weak var myTableView: UITableView!
     
-    var foodArray = ["じゃがいも"]
+    var foodArray : [FoodData] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        myTableView.dataSource = self
+        myTableView.delegate = self
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        //coredataからデータ取得
+        //coredataからのデータ取得
+        getData()
+        
+        //テーブルビューへリロード
+        myTableView.reloadData()
     }
     
     //行数
@@ -30,12 +40,45 @@ class FoodViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     //表示するセルの中身
     // リストに表示する文字列行数を決定表示
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)as!customCell2
+        
+        let task = foodArray[indexPath.row]
+        
+        //cell.foodTextLabel?.text = task.value(forKey: "name")as!String
+        //cell.doseTaxtLabel?.text = task.value(forKey: "dose")as!String
+        
+        
+        
         //       色を青にする
         cell.textLabel?.textColor = UIColor.blue
         
-        
-        cell.textLabel?.text = foodArray[indexPath.row]
+        //データの読み込処理
+        func getData() {
+            let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+            do {
+                foodArray = try context.fetch(FoodData.fetchRequest())
+            }
+            catch{
+                print("Fetching Failed")
+            }
+        }
+        func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+            let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+            
+            if editingStyle == .delete{
+                let task = foodArray[indexPath.row]
+                context.delete(task)
+                (UIApplication.shared.delegate as! AppDelegate).saveContext()
+                do {
+                    foodArray = try context.fetch(FoodData.fetchRequest())
+                }catch{
+                    print("Fetching Failed")
+                }
+            }
+            tableView.reloadData()
+        }
+
+       
         
         return cell
     }

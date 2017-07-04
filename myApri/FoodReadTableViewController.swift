@@ -9,12 +9,60 @@
 import UIKit
 
 class FoodReadTableViewController: UIViewController {
+    
+    //各ボタンの指定
+    
+    @IBOutlet weak var foodText: UITextField!
+    
+    @IBOutlet weak var doseText: UITextField!
+    
+    @IBOutlet weak var savetypeBtn: UISegmentedControl!
+    
+    @IBOutlet weak var buyDate: UIDatePicker!
+    
+    @IBOutlet weak var limitDate: UIDatePicker!
+    
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
     }
+    
+    //データ接続
+    @IBAction func foodText(_ sender: UITextField) {
+    }
+    
+    @IBAction func doseText(_ sender: UITextField) {
+    }
+    
+    @IBAction func savetypeBtn(_ sender: UISegmentedControl) {
+    }
+    
+    @IBAction func buyDate(_ sender: UIDatePicker) {
+    }
+    
+    @IBAction func limitDate(_ sender: UIDatePicker) {
+    }
+    
+    
+    
+    //データ保存ボタン
+    @IBAction func saveBtn(_ sender: Any) {
+        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        let FoodArray = FoodData(context: context)
+        FoodArray.name = foodText.text!
+        FoodArray.dose = doseText.text!
+        FoodArray.savetype = savetypeBtn.btn!
+        FoodArray.buyDate = buyDate.date!
+        FoodArray.limitDate = limitDate.date!
+        
+    }
+    
+    
+    
+    
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

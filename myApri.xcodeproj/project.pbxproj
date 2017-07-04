@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		632EE0251F0A8A1700EA9E4B /* customCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 632EE0241F0A8A1700EA9E4B /* customCell.swift */; };
+		632EE0641F0B70CC00EA9E4B /* customCell2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 632EE0631F0B70CC00EA9E4B /* customCell2.swift */; };
 		6335C64C1F054E4C009DA84D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6335C64B1F054E4C009DA84D /* AppDelegate.swift */; };
 		6335C6511F054E4C009DA84D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6335C64F1F054E4C009DA84D /* Main.storyboard */; };
 		6335C6541F054E4C009DA84D /* myApri.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6335C6521F054E4C009DA84D /* myApri.xcdatamodeld */; };
@@ -44,6 +45,7 @@
 
 /* Begin PBXFileReference section */
 		632EE0241F0A8A1700EA9E4B /* customCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = customCell.swift; sourceTree = "<group>"; };
+		632EE0631F0B70CC00EA9E4B /* customCell2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = customCell2.swift; sourceTree = "<group>"; };
 		6335C6481F054E4C009DA84D /* myApri.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = myApri.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6335C64B1F054E4C009DA84D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6335C6501F054E4C009DA84D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -117,19 +119,20 @@
 			children = (
 				6335C67C1F055275009DA84D /* ViewController.swift */,
 				6335C64B1F054E4C009DA84D /* AppDelegate.swift */,
-				63B690031F0A0FDE00984B6D /* BuyReadViewController.swift */,
 				63C6AF811F0633A9000C62BB /* CameraTableViewCell.swift */,
-				6335C6801F0552A6009DA84D /* BuyViewController.swift */,
-				6335C6821F055950009DA84D /* FoodEditeViewController.swift */,
-				6335C64F1F054E4C009DA84D /* Main.storyboard */,
 				6335C67E1F05528E009DA84D /* FoodViewController.swift */,
+				63B690011F0A0FAD00984B6D /* FoodReadTableViewController.swift */,
+				6335C6821F055950009DA84D /* FoodEditeViewController.swift */,
+				6335C6801F0552A6009DA84D /* BuyViewController.swift */,
+				63B690031F0A0FDE00984B6D /* BuyReadViewController.swift */,
 				6335C6841F055967009DA84D /* BuyEditeViewController.swift */,
+				6335C64F1F054E4C009DA84D /* Main.storyboard */,
 				6335C6551F054E4C009DA84D /* Assets.xcassets */,
 				6335C6571F054E4C009DA84D /* LaunchScreen.storyboard */,
 				6335C65A1F054E4C009DA84D /* Info.plist */,
 				6335C6521F054E4C009DA84D /* myApri.xcdatamodeld */,
-				63B690011F0A0FAD00984B6D /* FoodReadTableViewController.swift */,
 				632EE0241F0A8A1700EA9E4B /* customCell.swift */,
+				632EE0631F0B70CC00EA9E4B /* customCell2.swift */,
 			);
 			path = myApri;
 			sourceTree = "<group>";
@@ -287,6 +290,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				63C6AF821F0633A9000C62BB /* CameraTableViewCell.swift in Sources */,
+				632EE0641F0B70CC00EA9E4B /* customCell2.swift in Sources */,
 				6335C6831F055950009DA84D /* FoodEditeViewController.swift in Sources */,
 				6335C67D1F055275009DA84D /* ViewController.swift in Sources */,
 				6335C6811F0552A6009DA84D /* BuyViewController.swift in Sources */,
