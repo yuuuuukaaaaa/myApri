@@ -40,13 +40,17 @@ class BuyViewController: UIViewController,UITableViewDelegate,UITableViewDataSou
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)as!customCell
         
-//        cell.foodTextLabel.text = myTableView2[index.row]
         
         
         let task = tasks[indexPath.row]
         
         cell.foodTextLabel?.text = task.value(forKey: "name")as!String
         cell.doseTaxtLabel?.text = task.value(forKey: "dose")as!String
+        cell.foodTextLabel?.text = task.value(forKey: "savetype")as!String
+        cell.doseTaxtLabel?.text = task.value(forKey: "limitDate")as!String
+        cell.foodTextLabel?.text = task.value(forKey: "buyDate")as!String
+        
+        
 
         //       色を青にする
         cell.textLabel?.textColor = UIColor.blue

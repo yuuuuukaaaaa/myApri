@@ -24,7 +24,6 @@ class FoodViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        //coredataからデータ取得
         //coredataからのデータ取得
         getData()
         
@@ -44,14 +43,20 @@ class FoodViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         
         let task = foodArray[indexPath.row]
         
-        //cell.foodTextLabel?.text = task.value(forKey: "name")as!String
-        //cell.doseTaxtLabel?.text = task.value(forKey: "dose")as!String
+        cell.name.text = task.value(forKey: "name")as!String
+        cell.dose?.text = task.value(forKey: "dose")as!String
+        cell.savetype?.text = task.value(forKey: "savetype")as!String
         
-        
+        cell.limitDate?.text = task.value(forKey: "limitDate")as!String
+        cell.buyDate?.text = task.value(forKey: "buyDate")as!String
+
         
         //       色を青にする
         cell.textLabel?.textColor = UIColor.blue
         
+        return cell
+        }
+    
         //データの読み込処理
         func getData() {
             let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
@@ -78,11 +83,7 @@ class FoodViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
             tableView.reloadData()
         }
 
-       
-        
-        return cell
-    }
-
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

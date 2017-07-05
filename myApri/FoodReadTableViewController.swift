@@ -40,9 +40,23 @@ class FoodReadTableViewController: UIViewController {
     }
     
     @IBAction func buyDate(_ sender: UIDatePicker) {
+            print(sender.date)
+            
+            //日付を文字列に変換するためのフォーマットを設定
+            let df = DateFormatter()
+            df.dateFormat = "yyyy/MM/dd"
+            
+            print(df.string(from: sender.date))
     }
     
     @IBAction func limitDate(_ sender: UIDatePicker) {
+            print(sender.date)
+            
+            //日付を文字列に変換するためのフォーマットを設定
+            let df = DateFormatter()
+            df.dateFormat = "yyyy/MM/dd"
+            
+            print(df.string(from: sender.date))
     }
     
     
@@ -53,13 +67,17 @@ class FoodReadTableViewController: UIViewController {
         let FoodArray = FoodData(context: context)
         FoodArray.name = foodText.text!
         FoodArray.dose = doseText.text!
-        FoodArray.savetype = savetypeBtn.btn!
-        FoodArray.buyDate = buyDate.date!
-        FoodArray.limitDate = limitDate.date!
+        //FoodArray.savetype = savetypeBtn.numberOfSegments
+        FoodArray.buyDate = buyDate.date as NSDate
+        FoodArray.limitDate = limitDate.date as NSDate
         
     }
     
-    
+    @IBAction func tapReturn1(_ sender: UITextField) {
+    }
+   
+    @IBAction func tapReturn2(_ sender: UITextField) {
+    }
     
     
     

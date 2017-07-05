@@ -38,7 +38,15 @@ class BuyReadViewController: UIViewController {
         
     }
     
-
+    //キーボードを下げる
+    
+    @IBAction func tapReturn1(_ sender: UITextField) {
+    }
+    
+    @IBAction func tapReturn2(_ sender: UITextField) {
+    }
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

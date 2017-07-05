@@ -117,6 +117,7 @@
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
                                     <action selector="BuyBtn:" destination="Yn1-4P-fid" eventType="touchUpInside" id="cPP-lQ-icS"/>
+                                    <action selector="tapReturn1:" destination="Yn1-4P-fid" eventType="editingDidEndOnExit" id="iCi-78-KEa"/>
                                 </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="1個" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NNy-xg-47p">
@@ -127,6 +128,7 @@
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
                                     <action selector="BuyDose:" destination="Yn1-4P-fid" eventType="touchUpInside" id="7S9-T2-c2r"/>
+                                    <action selector="tapReturn2:" destination="Yn1-4P-fid" eventType="editingDidEndOnExit" id="SqQ-dg-DZq"/>
                                 </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nqn-q9-xix">
@@ -209,6 +211,7 @@
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
                                     <action selector="foodText:" destination="Wu0-ME-Bnl" eventType="touchUpInside" id="9Y4-X7-Wbh"/>
+                                    <action selector="tapReturn1:" destination="Wu0-ME-Bnl" eventType="editingDidEndOnExit" id="63f-AH-Y0M"/>
                                 </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Xk8-oC-XfZ">
@@ -219,6 +222,7 @@
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
                                     <action selector="doseText:" destination="Wu0-ME-Bnl" eventType="touchUpInside" id="EOb-pv-gPs"/>
+                                    <action selector="tapReturn2:" destination="Wu0-ME-Bnl" eventType="editingDidEndOnExit" id="x41-aQ-WLZ"/>
                                 </connections>
                             </textField>
                             <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PO9-M3-CeY">
