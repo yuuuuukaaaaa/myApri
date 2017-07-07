@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class FoodReadTableViewController: UIViewController {
     
@@ -22,12 +23,19 @@ class FoodReadTableViewController: UIViewController {
     
     @IBOutlet weak var limitDate: UIDatePicker!
     
+    var buyDateString: String = ""
+    
+    var limitDateString: String = ""
+    
+    
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        //コアデータからデータの読み込み処理
+        read()
     }
+    
     
     //データ接続
     @IBAction func foodText(_ sender: UITextField) {
@@ -37,42 +45,100 @@ class FoodReadTableViewController: UIViewController {
     }
     
     @IBAction func savetypeBtn(_ sender: UISegmentedControl) {
+        
     }
     
     @IBAction func buyDate(_ sender: UIDatePicker) {
-            print(sender.date)
-            
-            //日付を文字列に変換するためのフォーマットを設定
-            let df = DateFormatter()
-            df.dateFormat = "yyyy/MM/dd"
-            
-            print(df.string(from: sender.date))
+        print(sender.date)
+        
+        //日付を文字列に変換するためのフォーマットを設定
+        let df = DateFormatter()
+        df.dateFormat = "yyyy/MM/dd"
+        
+        print(df.string(from: sender.date))
+        buyDateString = df.string(from: sender.date)
+
     }
     
     @IBAction func limitDate(_ sender: UIDatePicker) {
-            print(sender.date)
+        print(sender.date)
             
-            //日付を文字列に変換するためのフォーマットを設定
-            let df = DateFormatter()
-            df.dateFormat = "yyyy/MM/dd"
+        //日付を文字列に変換するためのフォーマットを設定
+        let df = DateFormatter()
+        df.dateFormat = "yyyy/MM/dd"
             
-            print(df.string(from: sender.date))
+        print(df.string(from: sender.date))
+                                                                                 limitDateString = df.string(from: sender.date)
     }
     
     
     
     //データ保存ボタン
     @IBAction func saveBtn(_ sender: Any) {
-        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-        let FoodArray = FoodData(context: context)
-        FoodArray.name = foodText.text!
-        FoodArray.dose = doseText.text!
-        //FoodArray.savetype = savetypeBtn.numberOfSegments
-        FoodArray.buyDate = buyDate.date as NSDate
-        FoodArray.limitDate = limitDate.date as NSDate
+        
+        //AppDelegateを用意しておく
+        let appDelegate: AppDelegate = UIApplication.shared.delegate as! AppDelegate
+        
+        //エンティティを操作するためのオブジェクトを作成
+        let viewContext = appDelegate.persistentContainer.viewContext
+        
+        //ToDoエンティティオブジェクトを作成
+        let FoodData = NSEntityDescription.entity(forEntityName: "FoodData", in:viewContext)
+        //ToDoエンティティにレコードを挿入するためのオブジェクトを作成
+        let newRecord = NSManagedObject(entity : FoodData!, insertInto:viewContext)
+        
+        //値をセット
+        newRecord.setValue(foodText.text, forKey: "name")//値を代入
+        newRecord.setValue(doseText.text, forKey: "dose")//値を代入
+        newRecord.setValue(savetypeBtn.selectedSegmentIndex, forKey: "savetype")//値を代入
+        newRecord.setValue(buyDate.date, forKey: "buyDate")//値を代入
+        newRecord.setValue(limitDate.date, forKey: "limitDate")//値を代入
+        do{
+            //レコード（行）の即時保存
+            try viewContext.save()
+        }catch{
+        }
         
     }
     
+    
+    //既に存在すつデータの読み込み処理
+    func read(){
+        //AppDelegateを用意しておく
+        let appDelegate: AppDelegate = UIApplication.shared.delegate as! AppDelegate
+        
+        //エンティティを操作するためのオブジェクトを作成
+        let viewContext = appDelegate.persistentContainer.viewContext
+        
+        //どのエンティティからdataを取得してくるか設定
+        let query: NSFetchRequest<FoodData> = FoodData.fetchRequest()
+    
+            do{
+                //データを一括取得
+                let fetchResults = try viewContext.fetch(query)
+                //データ取得
+                for result: AnyObject in fetchResults {
+                    let foodText: String? = result.value(forKey: "name") as? String
+                    let doseText: String? = result.value(forKey: "dose") as? String
+                    let savetypeBtn: String? = result.value(forKey: "savetype") as? String
+                    let buyDate: String? = result.value(forKey: "buyDate") as? String
+                    let limitDate :String? = result.value(forKey: "limitDate") as? String
+                    
+                    
+                    
+                    print("name:\(foodText) dose:\(doseText) savetype:\(savetypeBtn) buyDate:\(buyDate) limitDate:\(limitDate)")
+                }
+                
+        }catch{
+        }
+
+    }
+    
+    
+    
+    
+    
+    //キーボードを下げる
     @IBAction func tapReturn1(_ sender: UITextField) {
     }
    
