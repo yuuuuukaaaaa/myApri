@@ -10,14 +10,16 @@ import UIKit
 
 class BuyReadViewController: UIViewController {
 
-    
+    //各ボタンの指定
     @IBOutlet weak var BuyFoodText: UITextField!
     
     @IBOutlet weak var BuyDoseText: UITextField!
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        //コアデータからデータの読み込み処理
+        read()
         
     }
     
@@ -31,12 +33,60 @@ class BuyReadViewController: UIViewController {
     //データ保存ボタン
     
     @IBAction func btnTapped(_ sender: Any) {
-        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-        let task = BuyData(context: context)
-        task.name = BuyFoodText.text!
-        task.dose = BuyDoseText.text!
+        
+        
+        //AppDelegateを用意しておく
+        let appDelegate: AppDelegate = UIApplication.shared.delegate as! AppDelegate
+        
+        //エンティティを操作するためのオブジェクトを作成
+        let viewContext = appDelegate.persistentContainer.viewContext
+        
+        //BuyDataエンティティオブジェクトを作成
+        let BuyData = NSEntityDescription.entity(forEntityName: "BuyData", in:viewContext)
+        //BuyDataエンティティにレコードを挿入するためのオブジェクトを作成
+        let newRecord = NSManagedObject(entity : BuyData!, insertInto:viewContext)
+        
+        //値をセット
+        newRecord.setValue(BuyFoodText.text, forKey: "name")//値を代入
+        newRecord.setValue(BuyDoseText.text, forKey: "dose")//値を代入
+        do{
+            //レコード（行）の即時保存
+            try viewContext.save()
+        }catch{
+        }
+    }
+    
+    //既に存在すつデータの読み込み処理
+    func read(){
+        //AppDelegateを用意しておく
+        let appDelegate: AppDelegate = UIApplication.shared.delegate as! AppDelegate
+        
+        //エンティティを操作するためのオブジェクトを作成
+        let viewContext = appDelegate.persistentContainer.viewContext
+        
+        //どのエンティティからdataを取得してくるか設定
+        let query: NSFetchRequest<BuyData> = BuyData.fetchRequest()
+        
+        do{
+            //データを一括取得
+            let fetchResults = try viewContext.fetch(query)
+            //データ取得
+            for result: AnyObject in fetchResults {
+                let foodText: String? = result.value(forKey: "name") as? String
+                let doseText: String? = result.value(forKey: "dose") as? String
+                
+                
+                
+                print("name:\(foodText) dose:\(doseText) ")
+            }
+            
+        }catch{
+        }
         
     }
+
+    
+    
     
     //キーボードを下げる
     

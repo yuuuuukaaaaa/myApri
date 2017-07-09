@@ -12,7 +12,6 @@ import CoreData
 class FoodReadTableViewController: UIViewController {
     
     //各ボタンの指定
-    
     @IBOutlet weak var foodText: UITextField!
     
     @IBOutlet weak var doseText: UITextField!
@@ -68,7 +67,7 @@ class FoodReadTableViewController: UIViewController {
         df.dateFormat = "yyyy/MM/dd"
             
         print(df.string(from: sender.date))
-                                                                                 limitDateString = df.string(from: sender.date)
+        limitDateString = df.string(from: sender.date)
     }
     
     

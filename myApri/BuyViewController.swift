@@ -15,9 +15,11 @@ class BuyViewController: UIViewController,UITableViewDelegate,UITableViewDataSou
     
     @IBOutlet weak var myTableView2: UITableView!
 
-    var tasks : [BuyData] = []
+    var buyArray : [BuyData] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+       
         myTableView2.dataSource = self
         myTableView2.delegate = self
     }
@@ -31,7 +33,7 @@ class BuyViewController: UIViewController,UITableViewDelegate,UITableViewDataSou
     //行数
     //-> Int：戻り値のデータ型はInt型ですという意味　ついているものは戻り値がある
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return tasks.count
+        return buyArray.count
     }
     //表示するセルの中身
     // リストに表示する文字列行数を決定表示
@@ -40,20 +42,12 @@ class BuyViewController: UIViewController,UITableViewDelegate,UITableViewDataSou
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)as!customCell
         
-        
-        
-        let task = tasks[indexPath.row]
+
+        let task = buyArray[indexPath.row]
         
         cell.foodTextLabel?.text = task.value(forKey: "name")as!String
         cell.doseTaxtLabel?.text = task.value(forKey: "dose")as!String
-        cell.foodTextLabel?.text = task.value(forKey: "savetype")as!String
-        cell.doseTaxtLabel?.text = task.value(forKey: "limitDate")as!String
-        cell.foodTextLabel?.text = task.value(forKey: "buyDate")as!String
-        
-        
 
-        //       色を青にする
-        cell.textLabel?.textColor = UIColor.blue
         
         
         return cell
@@ -62,7 +56,7 @@ class BuyViewController: UIViewController,UITableViewDelegate,UITableViewDataSou
     func getData() {
         let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
         do {
-            tasks = try context.fetch(BuyData.fetchRequest())
+            buyArray = try context.fetch(BuyData.fetchRequest())
         }
         catch{
             print("Fetching Failed")
@@ -72,11 +66,11 @@ class BuyViewController: UIViewController,UITableViewDelegate,UITableViewDataSou
         let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
         
         if editingStyle == .delete{
-            let task = tasks[indexPath.row]
+            let task = buyArray[indexPath.row]
             context.delete(task)
             (UIApplication.shared.delegate as! AppDelegate).saveContext()
             do {
-                tasks = try context.fetch(BuyData.fetchRequest())
+                buyArray = try context.fetch(BuyData.fetchRequest())
             }catch{
                 print("Fetching Failed")
             }

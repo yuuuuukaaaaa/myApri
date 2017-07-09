@@ -15,9 +15,6 @@ class FoodViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     
     @IBOutlet weak var myTableView: UITableView!
     
-    
-    
-    
     var foodArray : [FoodData] = []
     
     override func viewDidLoad() {
@@ -41,19 +38,15 @@ class FoodViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         return foodArray.count
     }
     
-    
-    //
-    
-    
     //表示するセルの中身
     // リストに表示する文字列行数を決定表示
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as!customCell2
         
         let task = foodArray[indexPath.row]
-    
-    
-        cell.name.text = task.value(forKey: "name")as!String
+        
+        cell.name?.text = task.value(forKey: "name")as!String
         cell.dose?.text = task.value(forKey: "dose")as!String
         var saveindex = task.value(forKey: "savetype")as!Int
         
@@ -67,11 +60,11 @@ class FoodViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         default:
             cell.savetype.text = "なし"
         }
-        
+       
         //cell.savetype?.text = task.value(forKey: "savetype")as!Int
-//        task.value(forKey: "limitDate") as! String
-//        
-//        let vc = FoodReadTableViewController.buyDate
+        //task.value(forKey: "limitDate") as! String
+       
+        //let vc = FoodReadTableViewController.buyDate
         
         let df = DateFormatter()
         df.dateFormat = "yyyy/MM/dd"
@@ -86,9 +79,7 @@ class FoodViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         //cell.buyDate?.text = task.value(forKey: "buyDate")as! String
 
     
-        //       色を青にする
-        cell.textLabel?.textColor = UIColor.blue
-    
+        
         return cell
     }
     
@@ -105,7 +96,7 @@ class FoodViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
             let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
             
-            //
+            
             if editingStyle == .delete{
                 let task = foodArray[indexPath.row]
                 context.delete(task)
