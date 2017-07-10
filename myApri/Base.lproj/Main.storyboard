@@ -293,10 +293,10 @@
             </objects>
             <point key="canvasLocation" x="2731.875" y="390"/>
         </scene>
-        <!--Camera View-->
+        <!--Camera View Controller-->
         <scene sceneID="NJX-YM-mH4">
             <objects>
-                <viewController id="BrH-zM-qji" customClass="CameraView" customModule="myApri" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BrH-zM-qji" customClass="CameraViewController" customModule="myApri" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="OLI-SR-PXl"/>
                         <viewControllerLayoutGuide type="bottom" id="COB-p6-iQ6"/>
@@ -304,12 +304,35 @@
                     <view key="view" contentMode="scaleToFill" id="zpr-4a-lHp" customClass="CameraTableViewCell" customModule="myApri" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="IvO-hi-gxY">
+                                <rect key="frame" x="0.0" y="393" width="320" height="38"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <mutableString key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</mutableString>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SNc-Vb-k68">
+                                <rect key="frame" x="0.0" y="64" width="320" height="332"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="IvO-hi-gxY" firstAttribute="bottom" secondItem="COB-p6-iQ6" secondAttribute="top" id="BON-wF-zvE"/>
+                            <constraint firstItem="IvO-hi-gxY" firstAttribute="top" secondItem="OLI-SR-PXl" secondAttribute="bottom" constant="329" id="MSd-Wn-Pee"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="previewView" destination="SNc-Vb-k68" id="F73-z2-knK"/>
+                        <outlet property="textField" destination="IvO-hi-gxY" id="w3b-pJ-22t"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mnL-MY-hUw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2732" y="-401"/>
+            <point key="canvasLocation" x="2731.875" y="-401.25"/>
         </scene>
         <!--食材リスト-->
         <scene sceneID="2Hl-PZ-efe">

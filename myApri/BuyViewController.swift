@@ -12,7 +12,6 @@ import CoreData
 class BuyViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
     
     
-    
     @IBOutlet weak var myTableView2: UITableView!
 
     var buyArray : [BuyData] = []
