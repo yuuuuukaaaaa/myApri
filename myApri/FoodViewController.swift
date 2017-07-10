@@ -8,40 +8,7 @@
 
 import UIKit
 import CoreData
-import Foundation
 
-class DateManager {
-    
-    private let formatter = DateFormatter()
-    private let date = Date()
-    private var dateStr: String?
-    private let calendar = Calendar(identifier: .gregorian)
-    
-    init(){
-        formatter.timeZone = TimeZone.ReferenceType.local
-        formatter.dateFormat = "yyyy-MM-dd-HH-mm-ss"
-        dateStr = ""
-    }
-    //現在時刻を返します"yyyy-MM-dd-HH-mm-ss"
-    func getNowDate() -> String{
-        dateStr = formatter.string(from: date)
-        guard let now = dateStr else { return ""}
-        return now
-    }
-    //設定したカウントダウンの秒数を返してくれます
-    func getXmaxTimeInterval() -> Int {
-        guard let xmas = calendar.date(from: DateComponents(year: 2016, month: 12, day: 25)) else { return 0}
-        let spanFromWow = xmas.timeIntervalSinceNow
-        return Int(floor(spanFromWow))
-    }
-    
-}
-
-let date = DateManager()
-//countにカウントダウンの秒数が返ってきます
-let count: Int = date.getXmaxTimeInterval()
-//返ってきたデータをラベルに入力
-//LimitDate.text = String(count)
 
 
 class FoodViewController: UIViewController,UITableViewDelegate,UITableViewDataSource{
@@ -97,24 +64,53 @@ class FoodViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
             cell.savetype.text = "なし"
         }
        
-        //cell.savetype?.text = task.value(forKey: "savetype")as!Int
-        //task.value(forKey: "limitDate") as! String
-       
-        //let vc = FoodReadTableViewController.buyDate
+        let vc = FoodReadTableViewController.buyDate
         
         let df = DateFormatter()
         df.dateFormat = "yyyy/MM/dd"
         let dataDate = df.string(from: task.value(forKey: "limitDate") as! Date)
         
         
-        cell.limitDate?.text = dataDate
-        
         let df1 = DateFormatter()
         df1.dateFormat = "yyyy/MM/dd"
         let dataDate1 = df1.string(from: task.value(forKey: "buyDate") as! Date)
         cell.buyDate?.text = dataDate1
         
-        //cell.buyDate?.text = task.value(forKey: "buyDate")as! String
+        /**
+         　　２つの日付の差(n日)を取得
+         
+         - parameter date: 日付
+         - parameter anotherDay: 日付（オプション）。未指定時は当日が適用される
+         - returns: 算出後の日付
+         */
+        func getIntervalDays(date:Date?,anotherDay:Date? = nil) -> Double {
+            
+            var retInterval:Double!
+            
+            if anotherDay == nil {
+                retInterval = date?.timeIntervalSinceNow
+            } else {
+                retInterval = date?.timeIntervalSince(anotherDay!)
+            }
+            
+            let ret = retInterval/86400
+            let now = Date()
+            return floor(ret)  // n日
+        }
+        
+
+        // ex. 本日との差
+//        print(getIntervalDays(date: date1))
+        
+
+        
+        
+        
+        
+        
+        
+        
+        
 
     
         
