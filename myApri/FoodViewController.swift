@@ -8,10 +8,43 @@
 
 import UIKit
 import CoreData
+import Foundation
 
-class FoodViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
-{
+class DateManager {
+    
+    private let formatter = DateFormatter()
+    private let date = Date()
+    private var dateStr: String?
+    private let calendar = Calendar(identifier: .gregorian)
+    
+    init(){
+        formatter.timeZone = TimeZone.ReferenceType.local
+        formatter.dateFormat = "yyyy-MM-dd-HH-mm-ss"
+        dateStr = ""
+    }
+    //現在時刻を返します"yyyy-MM-dd-HH-mm-ss"
+    func getNowDate() -> String{
+        dateStr = formatter.string(from: date)
+        guard let now = dateStr else { return ""}
+        return now
+    }
+    //設定したカウントダウンの秒数を返してくれます
+    func getXmaxTimeInterval() -> Int {
+        guard let xmas = calendar.date(from: DateComponents(year: 2016, month: 12, day: 25)) else { return 0}
+        let spanFromWow = xmas.timeIntervalSinceNow
+        return Int(floor(spanFromWow))
+    }
+    
+}
 
+let date = DateManager()
+//countにカウントダウンの秒数が返ってきます
+let count: Int = date.getXmaxTimeInterval()
+//返ってきたデータをラベルに入力
+//LimitDate.text = String(count)
+
+
+class FoodViewController: UIViewController,UITableViewDelegate,UITableViewDataSource{
     
     @IBOutlet weak var myTableView: UITableView!
     
@@ -24,6 +57,9 @@ class FoodViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
        myTableView.delegate = self
         
     }
+    
+    
+    
     
     override func viewWillAppear(_ animated: Bool) {
         //coredataからのデータ取得
@@ -69,6 +105,8 @@ class FoodViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         let df = DateFormatter()
         df.dateFormat = "yyyy/MM/dd"
         let dataDate = df.string(from: task.value(forKey: "limitDate") as! Date)
+        
+        
         cell.limitDate?.text = dataDate
         
         let df1 = DateFormatter()

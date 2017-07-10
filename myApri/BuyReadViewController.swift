@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class BuyReadViewController: UIViewController {
 
@@ -19,7 +20,7 @@ class BuyReadViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         //コアデータからデータの読み込み処理
-        read()
+       read()
         
     }
     

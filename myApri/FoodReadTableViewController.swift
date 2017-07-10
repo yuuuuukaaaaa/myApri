@@ -12,6 +12,7 @@ import CoreData
 class FoodReadTableViewController: UIViewController {
     
     //各ボタンの指定
+
     @IBOutlet weak var foodText: UITextField!
     
     @IBOutlet weak var doseText: UITextField!
