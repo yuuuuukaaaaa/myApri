@@ -70,8 +70,9 @@ class FoodViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         let df = DateFormatter()
         df.dateFormat = "yyyy/MM/dd"
         let dataDate = df.string(from: task.value(forKey: "limitDate") as! Date)
-        let limitDate = String(getIntervalDays(date: task.value(forKey: "buyDate") as! Date))
-        cell.limitDate?.text = limitDate
+        let changeInt = Int(getIntervalDays(date: task.value(forKey: "buyDate") as! Date))
+        let changeInt1 = String(changeInt)
+        cell.limitDate?.text = ("\(changeInt1)日")
         
 //        cell.limitDate?.text = getIntervalDays(date: task.value(forKey: "limitDate") as! Date)
        
@@ -81,7 +82,9 @@ class FoodViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         df1.dateFormat = "yyyy/MM/dd"
         let dataDate1 = df1.string(from: task.value(forKey: "buyDate") as! Date)
         let buyDate = String(getIntervalDays1(date: task.value(forKey: "limitDate") as! Date))
-        cell.buyDate?.text = buyDate
+        let changeInt2 = Int(getIntervalDays1(date: task.value(forKey: "limitDate") as! Date))
+        let changeInt3 = String(changeInt2)
+        cell.buyDate?.text = ("\(changeInt3)日")
         
 //        cell.buyDate?.text = (date: task.value(forKey: "limitDate")  as! Date)
         
