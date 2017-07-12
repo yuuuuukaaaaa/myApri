@@ -44,7 +44,7 @@ class CameraViewController: UIViewController,AVCaptureMetadataOutputObjectsDeleg
         // QRコードを検出した際のデリゲート設定
         metadataOutput.setMetadataObjectsDelegate(self, queue: DispatchQueue.main)
         // QRコードの認識を設定
-        metadataOutput.metadataObjectTypes = [AVMetadataObjectTypeQRCode]
+        metadataOutput.metadataObjectTypes = [AVMetadataObjectTypeEAN13Code]
         
         // プレビュー表示
         videoLayer = AVCaptureVideoPreviewLayer.init(session: captureSession)
@@ -57,25 +57,28 @@ class CameraViewController: UIViewController,AVCaptureMetadataOutputObjectsDeleg
             self.captureSession.startRunning()
         }
         
-        func captureOutput(_ captureOutput: AVCaptureOutput!, didOutputMetadataObjects metadataObjects: [Any]!, from connection: AVCaptureConnection!) {
-            // 複数のメタデータを検出できる
-            for metadata in metadataObjects as! [AVMetadataMachineReadableCodeObject] {
-                // QRコードのデータかどうかの確認
-                if metadata.type == AVMetadataObjectTypeQRCode {
-                    // 検出位置を取得
-                    let barCode = videoLayer?.transformedMetadataObject(for: metadata) as! AVMetadataMachineReadableCodeObject
-                    qrView!.frame = barCode.bounds
-                    if metadata.stringValue != nil {
-                        // 検出データを取得
-                        textField.text = metadata.stringValue!
-                    }
-                }
-            }
-
-        }
         
         
     }
+    
+    func captureOutput(_ captureOutput: AVCaptureOutput!, didOutputMetadataObjects metadataObjects: [Any]!, from connection: AVCaptureConnection!) {
+        // 複数のメタデータを検出できる
+        for metadata in metadataObjects as! [AVMetadataMachineReadableCodeObject] {
+            // QRコードのデータかどうかの確認
+            if metadata.type == AVMetadataObjectTypeEAN13Code {
+                // 検出位置を取得
+                let barCode = videoLayer?.transformedMetadataObject(for: metadata) as! AVMetadataMachineReadableCodeObject
+                qrView!.frame = barCode.bounds
+                if metadata.stringValue != nil {
+                    // 検出データを取得
+                    print(metadata.stringValue!)
+                    textField.text = metadata.stringValue!
+                }
+            }
+        }
+        
+    }
+
     
     
 

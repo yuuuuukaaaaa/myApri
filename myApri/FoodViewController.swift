@@ -51,6 +51,8 @@ class FoodViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         
         cell.name?.text = task.value(forKey: "name")as!String
         cell.dose?.text = task.value(forKey: "dose")as!String
+       
+        //保存方法表記
         var saveindex = task.value(forKey: "savetype")as!Int
         
         switch saveindex {
@@ -64,58 +66,83 @@ class FoodViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
             cell.savetype.text = "なし"
         }
        
-        let vc = FoodReadTableViewController.buyDate
-        
+        //賞味期限
         let df = DateFormatter()
         df.dateFormat = "yyyy/MM/dd"
         let dataDate = df.string(from: task.value(forKey: "limitDate") as! Date)
+        let limitDate = String(getIntervalDays(date: task.value(forKey: "buyDate") as! Date))
+        cell.limitDate?.text = limitDate
         
+//        cell.limitDate?.text = getIntervalDays(date: task.value(forKey: "limitDate") as! Date)
+       
         
+        //購入日から本日までのカウント
         let df1 = DateFormatter()
         df1.dateFormat = "yyyy/MM/dd"
         let dataDate1 = df1.string(from: task.value(forKey: "buyDate") as! Date)
-        cell.buyDate?.text = dataDate1
+        let buyDate = String(getIntervalDays1(date: task.value(forKey: "limitDate") as! Date))
+        cell.buyDate?.text = buyDate
         
-        /**
-         　　２つの日付の差(n日)を取得
-         
-         - parameter date: 日付
-         - parameter anotherDay: 日付（オプション）。未指定時は当日が適用される
-         - returns: 算出後の日付
-         */
-        func getIntervalDays(date:Date?,anotherDay:Date? = nil) -> Double {
-            
-            var retInterval:Double!
-            
-            if anotherDay == nil {
-                retInterval = date?.timeIntervalSinceNow
-            } else {
-                retInterval = date?.timeIntervalSince(anotherDay!)
-            }
-            
-            let ret = retInterval/86400
-            let now = Date()
-            return floor(ret)  // n日
-        }
+//        cell.buyDate?.text = (date: task.value(forKey: "limitDate")  as! Date)
         
+        
+        print(dataDate)
+        print(dataDate1)
 
-        // ex. 本日との差
-//        print(getIntervalDays(date: date1))
-        
 
         
+ //  賞味期限デバックプリント
+        print(getIntervalDays(date: task.value(forKey: "buyDate") as! Date))
         
-        
-        
-        
-        
-        
+        // 購入日から今日までの日数カウントのデバックプリント
+        print(getIntervalDays1(date: task.value(forKey: "limitDate") as! Date))
         
 
-    
         
         return cell
     }
+    
+    /**
+     　　賞味期限を取得
+     
+     - parameter date: 日付
+     - parameter anotherDay: 日付（オプション）。未指定時は当日が適用される
+     - returns: 算出後の日付
+     */
+    func getIntervalDays(date:Date?,anotherDay:Date? = nil) -> Double {
+        
+        var retInterval:Double!
+        if anotherDay == nil {
+            retInterval = date?.timeIntervalSinceNow
+        } else {
+            retInterval = date?.timeIntervalSince(anotherDay!)
+        }
+
+        let ret = retInterval/86400
+        
+        return floor(ret)  // n日
+    }
+    
+    
+    
+    
+    func getIntervalDays1(date:Date?,anotherDay:Date? = nil) -> Double {
+        
+        var retInterval:Double!
+        if anotherDay == nil {
+            retInterval = date?.timeIntervalSinceNow
+        } else {
+            retInterval = date?.timeIntervalSince(anotherDay!)
+        }
+        
+        let ret = retInterval/86400
+        
+        return floor(ret - ret - ret + 1)  // n日
+    }
+
+    
+    
+    
     
         //データの読み込処理
         func getData() {

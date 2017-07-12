@@ -229,6 +229,7 @@
 				TargetAttributes = {
 					6335C6471F054E4C009DA84D = {
 						CreatedOnToolsVersion = 8.3.2;
+						DevelopmentTeam = 9J7MZ7H7KV;
 						ProvisioningStyle = Automatic;
 					};
 					6335C65E1F054E4D009DA84D = {
@@ -463,7 +464,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 9J7MZ7H7KV;
 				INFOPLIST_FILE = myApri/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.yukasaito.myApri;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -475,7 +478,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 9J7MZ7H7KV;
 				INFOPLIST_FILE = myApri/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.yukasaito.myApri;
 				PRODUCT_NAME = "$(TARGET_NAME)";
