@@ -16,9 +16,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+//        ナビゲーションバーの背景を変更
+//        UINavigationBar.appearance().barTintColor = UIColor(red: 0.6, green: 1.9, blue: 1.9, alpha: 0)
+        
         let urls = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
         print(urls[urls.count-1] as URL)
-
                 return true
     }
 

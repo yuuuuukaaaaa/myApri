@@ -28,7 +28,6 @@ class FoodReadTableViewController: UIViewController {
     var limitDateString: String = ""
     
     
-    
 
     override func viewDidLoad() {
         super.viewDidLoad()
