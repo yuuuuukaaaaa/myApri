@@ -9,10 +9,73 @@
 import UIKit
 import AVFoundation
 
-class CameraViewController: UIViewController,AVCaptureMetadataOutputObjectsDelegate {
+class CameraViewController: UIViewController,AVCaptureMetadataOutputObjectsDelegate,XMLParserDelegate {
     
     @IBOutlet weak var previewView: UIView!
     @IBOutlet weak var textField: UITextView!
+    
+    func load() {
+        getcode()
+        
+        //yahooのAPIからデータを取得
+        //JSONファイルを読み込む
+        //URLを指定して、インターネット経由で取得 URL型へ変換
+        var barcode=getdate
+        
+        var url = URL(string:"http://shopping.yahooapis.jp/ShoppingWebService/V1/json/itemSearch?appid=dj00aiZpPUg2UFJNNWJLTThkaiZzPWNvbnN1bWVyc2VjcmV0Jng9ZTM-&category_id=2498&isbn=\(barcode)")
+        //インターネットに接続するためのリクエストを作成 url!は上記のurlのことを指している
+        //エンターを押した時に情報をとってくるためのデータ
+        var request = URLRequest(url: url!)
+        var jsondata = (try! NSURLConnection.sendSynchronousRequest(request, returning: nil))
+        
+        //辞書データに変換
+        let jsonDic = (try! JSONSerialization.jsonObject(with: jsondata, options: [])) as! NSDictionary
+        
+        
+        //キーの個数だけ繰り返して表示
+        for(key,data) in jsonDic{
+            print("Key:\(key) Data:\(data)")
+        }
+        
+        
+        do{
+            //resultsキーを指定してすべての情報を取得
+            var result:NSDictionary
+            result = jsonDic["ResultSet"] as! NSDictionary
+            
+            var result1:NSDictionary
+            result1 = result["0"] as! NSDictionary
+            
+            var result2:NSDictionary
+            result2 = result1["Result"] as! NSDictionary
+            
+            //名前のデータ取得
+            var result3:NSDictionary
+            result3 = result2["3"] as! NSDictionary
+            
+            print(result3["Name"])
+            
+            //画像イメージ取得
+            var result4:NSDictionary
+            result4 = result2["1"] as! NSDictionary
+            
+            var result5:NSDictionary
+            result5 = result4["Image"] as! NSDictionary
+            
+            var result6:String
+            result6 = result5["Small"] as! String
+            
+            print(result6)
+        }
+        
+        
+        
+    }
+
+    
+    
+    
+    
     
     
     // セッションのインスタンス生成
@@ -51,6 +114,11 @@ class CameraViewController: UIViewController,AVCaptureMetadataOutputObjectsDeleg
         videoLayer?.frame = previewView.bounds
         videoLayer?.videoGravity = AVLayerVideoGravityResizeAspectFill
         previewView.layer.addSublayer(videoLayer!)
+        
+        func getcode(){
+            
+        }
+
         
         // セッションの開始
         DispatchQueue.global(qos: .userInitiated).async {
