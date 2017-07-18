@@ -14,15 +14,17 @@ class CameraViewController: UIViewController,AVCaptureMetadataOutputObjectsDeleg
     @IBOutlet weak var previewView: UIView!
     @IBOutlet weak var textField: UITextView!
     
+    var num = ""
+    
     func load() {
-        getcode()
+//        getcode()
         
         //yahooのAPIからデータを取得
         //JSONファイルを読み込む
         //URLを指定して、インターネット経由で取得 URL型へ変換
         var barcode=getdate
         
-        var url = URL(string:"http://shopping.yahooapis.jp/ShoppingWebService/V1/json/itemSearch?appid=dj00aiZpPUg2UFJNNWJLTThkaiZzPWNvbnN1bWVyc2VjcmV0Jng9ZTM-&category_id=2498&isbn=\(barcode)")
+        var url = URL(string:"http://shopping.yahooapis.jp/ShoppingWebService/V1/json/itemSearch?appid=dj00aiZpPUg2UFJNNWJLTThkaiZzPWNvbnN1bWVyc2VjcmV0Jng9ZTM-&category_id=2498&isbn=4903001064353\(num)")
         //インターネットに接続するためのリクエストを作成 url!は上記のurlのことを指している
         //エンターを押した時に情報をとってくるためのデータ
         var request = URLRequest(url: url!)
@@ -88,7 +90,9 @@ class CameraViewController: UIViewController,AVCaptureMetadataOutputObjectsDeleg
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // QRコードをマークするビュー
+        self.load()
+        
+        // バーコードをマークするビュー
         qrView = UIView()
         qrView.layer.borderWidth = 4
         qrView.layer.borderColor = UIColor.red.cgColor
@@ -104,9 +108,9 @@ class CameraViewController: UIViewController,AVCaptureMetadataOutputObjectsDeleg
         let metadataOutput = AVCaptureMetadataOutput()
         captureSession.addOutput(metadataOutput)
         
-        // QRコードを検出した際のデリゲート設定
+        // バーコードを検出した際のデリゲート設定
         metadataOutput.setMetadataObjectsDelegate(self, queue: DispatchQueue.main)
-        // QRコードの認識を設定
+        // バーコードの認識を設定
         metadataOutput.metadataObjectTypes = [AVMetadataObjectTypeEAN13Code]
         
         // プレビュー表示
@@ -114,11 +118,6 @@ class CameraViewController: UIViewController,AVCaptureMetadataOutputObjectsDeleg
         videoLayer?.frame = previewView.bounds
         videoLayer?.videoGravity = AVLayerVideoGravityResizeAspectFill
         previewView.layer.addSublayer(videoLayer!)
-        
-        func getcode(){
-            
-        }
-
         
         // セッションの開始
         DispatchQueue.global(qos: .userInitiated).async {
@@ -132,7 +131,7 @@ class CameraViewController: UIViewController,AVCaptureMetadataOutputObjectsDeleg
     func captureOutput(_ captureOutput: AVCaptureOutput!, didOutputMetadataObjects metadataObjects: [Any]!, from connection: AVCaptureConnection!) {
         // 複数のメタデータを検出できる
         for metadata in metadataObjects as! [AVMetadataMachineReadableCodeObject] {
-            // QRコードのデータかどうかの確認
+            // バーコードコードのデータかどうかの確認
             if metadata.type == AVMetadataObjectTypeEAN13Code {
                 // 検出位置を取得
                 let barCode = videoLayer?.transformedMetadataObject(for: metadata) as! AVMetadataMachineReadableCodeObject
@@ -140,13 +139,17 @@ class CameraViewController: UIViewController,AVCaptureMetadataOutputObjectsDeleg
                 if metadata.stringValue != nil {
                     // 検出データを取得
                     print(metadata.stringValue!)
+                    num = metadata.stringValue!
                     textField.text = metadata.stringValue!
                 }
             }
         }
-        
     }
-
+    
+    //メンバ変数を設定
+    func getcode(){
+        var getcode = num
+    }
     
     
 
