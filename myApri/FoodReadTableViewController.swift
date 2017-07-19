@@ -11,7 +11,8 @@ import CoreData
 
 class FoodReadTableViewController: UIViewController {
     
-    //各ボタンの指定
+    //入力画面の指定
+    @IBOutlet weak var photo: UIImageView!
 
     @IBOutlet weak var foodText: UITextField!
     
@@ -37,6 +38,8 @@ class FoodReadTableViewController: UIViewController {
     
     
     //データ接続
+    
+    
     @IBAction func foodText(_ sender: UITextField) {
     }
     
@@ -72,8 +75,12 @@ class FoodReadTableViewController: UIViewController {
     
     
     
+    
+    
+    
     //データ保存ボタン
-    @IBAction func saveBtn(_ sender: Any) {
+    @IBAction func saveBtn(_ sender: Any){
+       
         
         //AppDelegateを用意しておく
         let appDelegate: AppDelegate = UIApplication.shared.delegate as! AppDelegate
@@ -87,6 +94,7 @@ class FoodReadTableViewController: UIViewController {
         let newRecord = NSManagedObject(entity : FoodData!, insertInto:viewContext)
         
         //値をセット
+        newRecord.setValue(photo, forKey: "photo")//値を代入
         newRecord.setValue(foodText.text, forKey: "name")//値を代入
         newRecord.setValue(doseText.text, forKey: "dose")//値を代入
         newRecord.setValue(savetypeBtn.selectedSegmentIndex, forKey: "savetype")//値を代入
@@ -117,6 +125,7 @@ class FoodReadTableViewController: UIViewController {
                 let fetchResults = try viewContext.fetch(query)
                 //データ取得
                 for result: AnyObject in fetchResults {
+                    let photo: String? = result.value(forKey: "photo") as? String
                     let foodText: String? = result.value(forKey: "name") as? String
                     let doseText: String? = result.value(forKey: "dose") as? String
                     let savetypeBtn: String? = result.value(forKey: "savetype") as? String
@@ -125,7 +134,7 @@ class FoodReadTableViewController: UIViewController {
                     
                     
                     
-                    print("name:\(foodText) dose:\(doseText) savetype:\(savetypeBtn) buyDate:\(buyDate) limitDate:\(limitDate)")
+                    print("photo:\(photo) name:\(foodText) dose:\(doseText) savetype:\(savetypeBtn) buyDate:\(buyDate) limitDate:\(limitDate)")
                 }
                 
         }catch{

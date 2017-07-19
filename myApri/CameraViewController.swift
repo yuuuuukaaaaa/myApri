@@ -22,9 +22,9 @@ class CameraViewController: UIViewController,AVCaptureMetadataOutputObjectsDeleg
         //yahooのAPIからデータを取得
         //JSONファイルを読み込む
         //URLを指定して、インターネット経由で取得 URL型へ変換
-        var barcode=getdate
+        var barcode=num
         
-        var url = URL(string:"http://shopping.yahooapis.jp/ShoppingWebService/V1/json/itemSearch?appid=dj00aiZpPUg2UFJNNWJLTThkaiZzPWNvbnN1bWVyc2VjcmV0Jng9ZTM-&category_id=2498&isbn=4903001064353\(num)")
+        var url = URL(string:"http://shopping.yahooapis.jp/ShoppingWebService/V1/json/itemSearch?appid=dj00aiZpPUg2UFJNNWJLTThkaiZzPWNvbnN1bWVyc2VjcmV0Jng9ZTM-&category_id=2498&isbn=\(num)")
         //インターネットに接続するためのリクエストを作成 url!は上記のurlのことを指している
         //エンターを押した時に情報をとってくるためのデータ
         var request = URLRequest(url: url!)
@@ -55,7 +55,11 @@ class CameraViewController: UIViewController,AVCaptureMetadataOutputObjectsDeleg
             var result3:NSDictionary
             result3 = result2["3"] as! NSDictionary
             
-            print(result3["Name"])
+            if let result3 = result2["3"]{
+                print(result3)
+            }else {
+                print("読み込めません")
+            }
             
             //画像イメージ取得
             var result4:NSDictionary
@@ -68,6 +72,11 @@ class CameraViewController: UIViewController,AVCaptureMetadataOutputObjectsDeleg
             result6 = result5["Small"] as! String
             
             print(result6)
+            
+            //セグエを指定して画面移動
+            performSegue(withIdentifier: "readAPI", sender: nil)
+            
+            
         }
         
         
@@ -90,7 +99,7 @@ class CameraViewController: UIViewController,AVCaptureMetadataOutputObjectsDeleg
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.load()
+//        self.load()
         
         // バーコードをマークするビュー
         qrView = UIView()
@@ -137,10 +146,15 @@ class CameraViewController: UIViewController,AVCaptureMetadataOutputObjectsDeleg
                 let barCode = videoLayer?.transformedMetadataObject(for: metadata) as! AVMetadataMachineReadableCodeObject
                 qrView!.frame = barCode.bounds
                 if metadata.stringValue != nil {
-                    // 検出データを取得
-                    print(metadata.stringValue!)
-                    num = metadata.stringValue!
-                    textField.text = metadata.stringValue!
+                    
+                    if num == "" {
+                        // 検出データを取得
+                        print(metadata.stringValue!)
+                        num = metadata.stringValue!
+                        textField.text = metadata.stringValue!
+
+                        load()
+                    }
                 }
             }
         }

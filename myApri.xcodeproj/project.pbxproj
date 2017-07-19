@@ -22,10 +22,10 @@
 		6335C6811F0552A6009DA84D /* BuyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6335C6801F0552A6009DA84D /* BuyViewController.swift */; };
 		6335C6831F055950009DA84D /* FoodEditeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6335C6821F055950009DA84D /* FoodEditeViewController.swift */; };
 		6335C6851F055967009DA84D /* BuyEditeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6335C6841F055967009DA84D /* BuyEditeViewController.swift */; };
+		6341CA851F1F88C600E7E4F8 /* FoodData+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6341CA841F1F88C600E7E4F8 /* FoodData+CoreDataProperties.swift */; };
+		6341CA871F1F8C1300E7E4F8 /* FoodData+CoreDateClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6341CA861F1F8C1300E7E4F8 /* FoodData+CoreDateClass.swift */; };
 		63B690021F0A0FAD00984B6D /* FoodReadTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B690011F0A0FAD00984B6D /* FoodReadTableViewController.swift */; };
 		63B690041F0A0FDE00984B6D /* BuyReadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B690031F0A0FDE00984B6D /* BuyReadViewController.swift */; };
-		63F0206C1F0E153C005ECE7A /* FoodData+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F0206A1F0E153C005ECE7A /* FoodData+CoreDataClass.swift */; };
-		63F0206D1F0E153C005ECE7A /* FoodData+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F0206B1F0E153C005ECE7A /* FoodData+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,10 +67,10 @@
 		6335C6801F0552A6009DA84D /* BuyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuyViewController.swift; sourceTree = "<group>"; };
 		6335C6821F055950009DA84D /* FoodEditeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoodEditeViewController.swift; sourceTree = "<group>"; };
 		6335C6841F055967009DA84D /* BuyEditeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuyEditeViewController.swift; sourceTree = "<group>"; };
+		6341CA841F1F88C600E7E4F8 /* FoodData+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FoodData+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		6341CA861F1F8C1300E7E4F8 /* FoodData+CoreDateClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FoodData+CoreDateClass.swift"; sourceTree = "<group>"; };
 		63B690011F0A0FAD00984B6D /* FoodReadTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoodReadTableViewController.swift; sourceTree = "<group>"; };
 		63B690031F0A0FDE00984B6D /* BuyReadViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuyReadViewController.swift; sourceTree = "<group>"; };
-		63F0206A1F0E153C005ECE7A /* FoodData+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "FoodData+CoreDataClass.swift"; path = "myApri/FoodData+CoreDataClass.swift"; sourceTree = "<group>"; };
-		63F0206B1F0E153C005ECE7A /* FoodData+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "FoodData+CoreDataProperties.swift"; path = "myApri/FoodData+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,8 +101,8 @@
 		6335C63F1F054E4C009DA84D = {
 			isa = PBXGroup;
 			children = (
-				63F0206A1F0E153C005ECE7A /* FoodData+CoreDataClass.swift */,
-				63F0206B1F0E153C005ECE7A /* FoodData+CoreDataProperties.swift */,
+				6341CA841F1F88C600E7E4F8 /* FoodData+CoreDataProperties.swift */,
+				6341CA861F1F8C1300E7E4F8 /* FoodData+CoreDateClass.swift */,
 				6335C64A1F054E4C009DA84D /* myApri */,
 				6335C6621F054E4D009DA84D /* myApriTests */,
 				6335C66D1F054E4D009DA84D /* myApriUITests */,
@@ -297,7 +297,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				63F0206D1F0E153C005ECE7A /* FoodData+CoreDataProperties.swift in Sources */,
 				632EE0641F0B70CC00EA9E4B /* customCell2.swift in Sources */,
 				6335C6831F055950009DA84D /* FoodEditeViewController.swift in Sources */,
 				6335C67D1F055275009DA84D /* ViewController.swift in Sources */,
@@ -306,11 +305,12 @@
 				63B690041F0A0FDE00984B6D /* BuyReadViewController.swift in Sources */,
 				63B690021F0A0FAD00984B6D /* FoodReadTableViewController.swift in Sources */,
 				632EE0251F0A8A1700EA9E4B /* customCell.swift in Sources */,
-				63F0206C1F0E153C005ECE7A /* FoodData+CoreDataClass.swift in Sources */,
 				6335C6851F055967009DA84D /* BuyEditeViewController.swift in Sources */,
 				632994931F13D2130021834B /* CameraViewController.swift in Sources */,
 				6335C67F1F05528E009DA84D /* FoodViewController.swift in Sources */,
 				6335C64C1F054E4C009DA84D /* AppDelegate.swift in Sources */,
+				6341CA851F1F88C600E7E4F8 /* FoodData+CoreDataProperties.swift in Sources */,
+				6341CA871F1F8C1300E7E4F8 /* FoodData+CoreDateClass.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

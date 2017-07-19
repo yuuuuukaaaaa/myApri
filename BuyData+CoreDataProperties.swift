@@ -2,7 +2,7 @@
 //  BuyData+CoreDataProperties.swift
 //  myApri
 //
-//  Created by MacUser on 2017/07/03.
+//  Created by MacUser on 2017/07/19.
 //  Copyright © 2017年 Yuka Saito. All rights reserved.
 //
 

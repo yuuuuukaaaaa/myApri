@@ -61,6 +61,8 @@ class BuyViewController: UIViewController,UITableViewDelegate,UITableViewDataSou
             print("Fetching Failed")
         }
     }
+    
+    //削除データ
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
         

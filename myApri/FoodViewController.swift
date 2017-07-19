@@ -48,7 +48,7 @@ class FoodViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as!customCell2
         
         let task = foodArray[indexPath.row]
-        
+//        cell.photo?.photo = 
         cell.name?.text = task.value(forKey: "name")as!String
         cell.dose?.text = task.value(forKey: "dose")as!String
        
@@ -147,17 +147,20 @@ class FoodViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     
     
     
-        //データの読み込処理
-        func getData() {
-            let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-            do {
-                foodArray = try context.fetch(FoodData.fetchRequest())
+    //データの読み込処理
+    func getData() {
+        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        do {
+            foodArray = try context.fetch(FoodData.fetchRequest())
             }
-            catch{
-                print("Fetching Failed")
-            }
+        catch{
+            print("Fetching Failed")
         }
-        func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+    }
+    
+    
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
             let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
             
             
@@ -171,7 +174,7 @@ class FoodViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
                     print("Fetching Failed")
                 }
             }
-            tableView.reloadData()
+        tableView.reloadData()
         }
 
     
