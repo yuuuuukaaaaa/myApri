@@ -24,6 +24,7 @@
 		6335C6851F055967009DA84D /* BuyEditeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6335C6841F055967009DA84D /* BuyEditeViewController.swift */; };
 		6341CA851F1F88C600E7E4F8 /* FoodData+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6341CA841F1F88C600E7E4F8 /* FoodData+CoreDataProperties.swift */; };
 		6341CA871F1F8C1300E7E4F8 /* FoodData+CoreDateClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6341CA861F1F8C1300E7E4F8 /* FoodData+CoreDateClass.swift */; };
+		6341CA8B1F2085EF00E7E4F8 /* noimage.png in Resources */ = {isa = PBXBuildFile; fileRef = 6341CA8A1F2085EF00E7E4F8 /* noimage.png */; };
 		63B690021F0A0FAD00984B6D /* FoodReadTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B690011F0A0FAD00984B6D /* FoodReadTableViewController.swift */; };
 		63B690041F0A0FDE00984B6D /* BuyReadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B690031F0A0FDE00984B6D /* BuyReadViewController.swift */; };
 /* End PBXBuildFile section */
@@ -69,6 +70,7 @@
 		6335C6841F055967009DA84D /* BuyEditeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuyEditeViewController.swift; sourceTree = "<group>"; };
 		6341CA841F1F88C600E7E4F8 /* FoodData+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FoodData+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		6341CA861F1F8C1300E7E4F8 /* FoodData+CoreDateClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FoodData+CoreDateClass.swift"; sourceTree = "<group>"; };
+		6341CA8A1F2085EF00E7E4F8 /* noimage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = noimage.png; path = ../../../../Downloads/noimage.png; sourceTree = "<group>"; };
 		63B690011F0A0FAD00984B6D /* FoodReadTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoodReadTableViewController.swift; sourceTree = "<group>"; };
 		63B690031F0A0FDE00984B6D /* BuyReadViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuyReadViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -123,6 +125,7 @@
 		6335C64A1F054E4C009DA84D /* myApri */ = {
 			isa = PBXGroup;
 			children = (
+				6341CA8A1F2085EF00E7E4F8 /* noimage.png */,
 				6335C67C1F055275009DA84D /* ViewController.swift */,
 				6335C64B1F054E4C009DA84D /* AppDelegate.swift */,
 				632994921F13D2130021834B /* CameraViewController.swift */,
@@ -272,6 +275,7 @@
 			files = (
 				6335C6591F054E4C009DA84D /* LaunchScreen.storyboard in Resources */,
 				6335C6561F054E4C009DA84D /* Assets.xcassets in Resources */,
+				6341CA8B1F2085EF00E7E4F8 /* noimage.png in Resources */,
 				6335C6511F054E4C009DA84D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

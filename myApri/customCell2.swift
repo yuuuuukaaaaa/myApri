@@ -10,6 +10,10 @@ import UIKit
 
 class customCell2: UITableViewCell {
     
+    
+    
+    @IBOutlet weak var photo: UIImageView!
+    
     @IBOutlet weak var name: UILabel!
   
     @IBOutlet weak var limitDate: UILabel!

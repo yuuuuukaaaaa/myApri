@@ -52,21 +52,30 @@ class CameraViewController: UIViewController,AVCaptureMetadataOutputObjectsDeleg
             result2 = result1["Result"] as! NSDictionary
             
             //名前のデータ取得
-            var result3:NSDictionary
-            result3 = result2["3"] as! NSDictionary
-            
-            if let result3 = result2["3"]{
-                print(result3)
+           var result3:NSDictionary
+            if result2["3"]  == nil {
+                //デバックに読み込めませんでしたと表示
+                print("バーコードが読込めません")
+                
+                
             }else {
-                print("読み込めません")
+                result3 = result2["3"] as! NSDictionary
             }
+
             
             //画像イメージ取得
             var result4:NSDictionary
             result4 = result2["1"] as! NSDictionary
             
             var result5:NSDictionary
-            result5 = result4["Image"] as! NSDictionary
+            if result4["Image"] == nil {
+                //デバックに読み込めませんでしたと表示
+                print("バーコードが読込めません")
+            }else {
+                result5 = result4["Image"] as! NSDictionary
+            }
+            
+            
             
             var result6:String
             result6 = result5["Small"] as! String

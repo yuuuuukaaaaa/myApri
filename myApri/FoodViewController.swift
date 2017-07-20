@@ -24,6 +24,7 @@ class FoodViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
        myTableView.delegate = self
         
     }
+    @IBOutlet weak var food: UIImageView!
     
     
     
@@ -48,7 +49,18 @@ class FoodViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as!customCell2
         
         let task = foodArray[indexPath.row]
-//        cell.photo?.photo = 
+        
+        //画像イメージ
+        //        cell.photo?.image = task.value(forKey: "photo")as!String
+        if task.value(forKey: "photo") == nil {
+            //no imageを表示
+            cell.photo.image = UIImage(named: "noimage.png")
+        }else{
+            //指定された画像を表示
+            print(task.value(forKey: "photo")as!String)
+
+        }
+        
         cell.name?.text = task.value(forKey: "name")as!String
         cell.dose?.text = task.value(forKey: "dose")as!String
        
