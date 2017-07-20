@@ -73,18 +73,18 @@ class CameraViewController: UIViewController,AVCaptureMetadataOutputObjectsDeleg
                 print("バーコードが読込めません")
             }else {
                 result5 = result4["Image"] as! NSDictionary
+                var result6:String
+                if result5["Small"] == nil {
+                    //デバックに読み込めませんでしたと表示
+                    print("バーコードが読込めません")
+                }else {
+                    result6 = result5["Small"] as! String
+                    print(result6)
+                }
             }
-            
-            
-            
-            var result6:String
-            result6 = result5["Small"] as! String
-            
-            print(result6)
             
             //セグエを指定して画面移動
             performSegue(withIdentifier: "readAPI", sender: nil)
-            
             
         }
         
