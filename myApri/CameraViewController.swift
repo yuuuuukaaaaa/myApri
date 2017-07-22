@@ -17,7 +17,6 @@ class CameraViewController: UIViewController,AVCaptureMetadataOutputObjectsDeleg
     var num = ""
     
     func load() {
-//        getcode()
         
         //yahooのAPIからデータを取得
         //JSONファイルを読み込む
@@ -55,32 +54,49 @@ class CameraViewController: UIViewController,AVCaptureMetadataOutputObjectsDeleg
            var result3:NSDictionary
             if result2["3"]  == nil {
                 //デバックに読み込めませんでしたと表示
-                print("バーコードが読込めません")
-                
-                
+                print("名前が読込めません")
+                if result2["0"] == nil {
+                    //デバックに読み込めませんでしたと表示
+                    print("名前が読込めません")
+                }else{
+                    result3 = result2["0"] as! NSDictionary
+                    var globalName = result3
+                    print(globalName["Name"])
+                }
             }else {
                 result3 = result2["3"] as! NSDictionary
+                var globalName = result3
+                print(globalName)
+                
             }
 
             
             //画像イメージ取得
             var result4:NSDictionary
-            result4 = result2["1"] as! NSDictionary
-            
-            var result5:NSDictionary
-            if result4["Image"] == nil {
+            if result2["1"] == nil {
                 //デバックに読み込めませんでしたと表示
-                print("バーコードが読込めません")
-            }else {
-                result5 = result4["Image"] as! NSDictionary
-                var result6:String
-                if result5["Small"] == nil {
+                print("写真が読込めません")
+            }else{
+                result4 = result2["1"] as! NSDictionary
+                
+                var result5:NSDictionary
+                if result4["Image"] == nil {
                     //デバックに読み込めませんでしたと表示
-                    print("バーコードが読込めません")
+                    print("写真が読込めません")
                 }else {
-                    result6 = result5["Small"] as! String
-                    print(result6)
+                    result5 = result4["Image"] as! NSDictionary
+                    
+                    var result6:String
+                    if result5["Small"] == nil {
+                        //デバックに読み込めませんでしたと表示
+                        print("写真が読込めません")
+                    }else {
+                        result6 = result5["Small"] as! String
+                        var globalPhoto = result6
+                        print(globalPhoto)
+                    }
                 }
+
             }
             
             //セグエを指定して画面移動
@@ -193,3 +209,25 @@ class CameraViewController: UIViewController,AVCaptureMetadataOutputObjectsDeleg
     */
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -95,8 +95,6 @@ class FoodReadTableViewController: UIViewController {
         let newRecord = NSManagedObject(entity : FoodData!, insertInto:viewContext)
         
         //値をセット
-        　
-        
         newRecord.setValue(photo.image, forKey: "photo")//値を代入
         newRecord.setValue(foodText.text, forKey: "name")//値を代入
         newRecord.setValue(doseText.text, forKey: "dose")//値を代入
