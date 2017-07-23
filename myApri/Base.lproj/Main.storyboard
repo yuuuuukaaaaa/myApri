@@ -221,31 +221,22 @@
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="bHx-lf-5SI">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ORJ-oS-pVn">
-                                <rect key="frame" x="18" y="150" width="50" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ORJ-oS-pVn">
+                                <rect key="frame" x="19" y="113" width="50" height="30"/>
                                 <state key="normal" title=" 食材名"/>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GhT-2y-OwQ">
-                                <rect key="frame" x="18" y="416" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="購入日"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CZq-MO-cDG">
-                                <rect key="frame" x="26" y="194" width="31" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CZq-MO-cDG">
+                                <rect key="frame" x="30" y="168" width="31" height="30"/>
                                 <state key="normal" title="数量"/>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dgf-vX-mda">
-                                <rect key="frame" x="10" y="245" width="62" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dgf-vX-mda">
+                                <rect key="frame" x="13" y="208" width="62" height="30"/>
                                 <state key="normal" title="保存方法"/>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="豚バラ肉" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="c03-aq-l9I">
-                                <rect key="frame" x="86" y="149" width="165" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="豚バラ肉" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="c03-aq-l9I">
+                                <rect key="frame" x="93" y="113" width="165" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -254,9 +245,12 @@
                                     <action selector="tapReturn1:" destination="Wu0-ME-Bnl" eventType="editingDidEndOnExit" id="63f-AH-Y0M"/>
                                 </connections>
                             </textField>
-                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kES-6L-yFg">
-                                <rect key="frame" x="14" y="313" width="288" height="95"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kES-6L-yFg">
+                                <rect key="frame" x="16" y="280" width="288" height="95"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="95" id="66K-7N-9lO"/>
+                                    <constraint firstAttribute="width" constant="288" id="iwl-48-HeO"/>
+                                </constraints>
                                 <date key="date" timeIntervalSinceReferenceDate="520505436.727741">
                                     <!--2017-06-30 8午前8:50:36 +0000-->
                                 </date>
@@ -265,9 +259,8 @@
                                     <action selector="limitDate:" destination="Wu0-ME-Bnl" eventType="valueChanged" id="OEf-ux-dPl"/>
                                 </connections>
                             </datePicker>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="bZf-Pd-yW0">
-                                <rect key="frame" x="86" y="246" width="216" height="29"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="bZf-Pd-yW0">
+                                <rect key="frame" x="86" y="210" width="216" height="29"/>
                                 <segments>
                                     <segment title="冷蔵"/>
                                     <segment title="冷凍"/>
@@ -277,14 +270,16 @@
                                     <action selector="savetypeBtn:" destination="Wu0-ME-Bnl" eventType="valueChanged" id="8b7-UN-eQ3"/>
                                 </connections>
                             </segmentedControl>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nUM-av-0G1">
-                                <rect key="frame" x="10" y="283" width="62" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nUM-av-0G1">
+                                <rect key="frame" x="13" y="246" width="62" height="30"/>
                                 <state key="normal" title="賞味期限"/>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="304-ds-PjA">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="304-ds-PjA">
                                 <rect key="frame" x="740" y="82" width="237" height="55"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="55" id="Gf0-C7-En2"/>
+                                    <constraint firstAttribute="width" constant="237" id="bzF-2j-Oxt"/>
+                                </constraints>
                                 <state key="normal" title="保存">
                                     <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
@@ -293,31 +288,15 @@
                                     <action selector="saveBtn:" destination="Wu0-ME-Bnl" eventType="touchDragEnter" id="kKO-WB-X55"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Agj-qL-AYf">
-                                <rect key="frame" x="18" y="80" width="59" height="59"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Agj-qL-AYf">
+                                <rect key="frame" x="16" y="28" width="59" height="59"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HEC-vW-GUS">
-                                <rect key="frame" x="260" y="67" width="54" height="47"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="保存">
-                                    <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="viG-jd-ib2">
-                                <rect key="frame" x="260" y="67" width="54" height="47"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="保存">
-                                    <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="saveBtn:" destination="Wu0-ME-Bnl" eventType="touchUpInside" id="6FH-ht-aXw"/>
-                                    <segue destination="B5d-bL-oz2" kind="show" id="E3r-yh-dEg"/>
-                                </connections>
-                            </button>
-                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PO9-M3-CeY">
-                                <rect key="frame" x="18" y="430" width="288" height="86"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PO9-M3-CeY">
+                                <rect key="frame" x="16" y="422" width="288" height="86"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="86" id="9VZ-tq-Qfo"/>
+                                    <constraint firstAttribute="width" constant="288" id="Vu9-5C-Hle"/>
+                                </constraints>
                                 <date key="date" timeIntervalSinceReferenceDate="520505436.727741">
                                     <!--2017-06-30 8午前8:50:36 +0000-->
                                 </date>
@@ -329,9 +308,8 @@
                                     <action selector="buyDate:" destination="Wu0-ME-Bnl" eventType="valueChanged" id="WND-vW-XgO"/>
                                 </connections>
                             </datePicker>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="100g" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Xk8-oC-XfZ">
-                                <rect key="frame" x="86" y="195" width="165" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="100g" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Xk8-oC-XfZ">
+                                <rect key="frame" x="93" y="168" width="165" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -340,8 +318,69 @@
                                     <action selector="tapReturn2:" destination="Wu0-ME-Bnl" eventType="editingDidEndOnExit" id="x41-aQ-WLZ"/>
                                 </connections>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="viG-jd-ib2">
+                                <rect key="frame" x="257" y="28" width="54" height="23"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="54" id="nbA-7F-Qhu"/>
+                                    <constraint firstAttribute="height" constant="23" id="x0N-vs-6xz"/>
+                                </constraints>
+                                <state key="normal" title="保存">
+                                    <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="saveBtn:" destination="Wu0-ME-Bnl" eventType="touchUpInside" id="6FH-ht-aXw"/>
+                                    <segue destination="B5d-bL-oz2" kind="show" id="E3r-yh-dEg"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GhT-2y-OwQ">
+                                <rect key="frame" x="22" y="383" width="46" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="3lI-Vh-EVC"/>
+                                </constraints>
+                                <state key="normal" title="購入日"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Dgf-vX-mda" firstAttribute="leading" secondItem="bHx-lf-5SI" secondAttribute="leadingMargin" constant="-3" id="0Gd-GB-kgH"/>
+                            <constraint firstItem="nUM-av-0G1" firstAttribute="top" secondItem="Dgf-vX-mda" secondAttribute="bottom" constant="8" symbolic="YES" id="0Pn-ln-LMD"/>
+                            <constraint firstItem="Agj-qL-AYf" firstAttribute="leading" secondItem="bHx-lf-5SI" secondAttribute="leadingMargin" id="1hX-Dr-m2A"/>
+                            <constraint firstItem="Agj-qL-AYf" firstAttribute="centerX" secondItem="CZq-MO-cDG" secondAttribute="centerX" id="3jX-Cc-kMd"/>
+                            <constraint firstItem="bZf-Pd-yW0" firstAttribute="top" secondItem="Xk8-oC-XfZ" secondAttribute="bottom" constant="12" id="4vr-uv-AL3"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="viG-jd-ib2" secondAttribute="trailing" constant="-7" id="6va-tM-DAH"/>
+                            <constraint firstItem="ORJ-oS-pVn" firstAttribute="bottom" secondItem="c03-aq-l9I" secondAttribute="bottom" id="8pJ-TU-0IK"/>
+                            <constraint firstItem="Agj-qL-AYf" firstAttribute="leading" secondItem="kES-6L-yFg" secondAttribute="leading" id="9RW-Vs-aPg"/>
+                            <constraint firstItem="ORJ-oS-pVn" firstAttribute="leading" secondItem="bHx-lf-5SI" secondAttribute="leadingMargin" constant="3" id="9YQ-O4-o1U"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Xk8-oC-XfZ" secondAttribute="trailing" constant="46" id="DwW-0U-Wyr"/>
+                            <constraint firstItem="bZf-Pd-yW0" firstAttribute="leading" secondItem="Dgf-vX-mda" secondAttribute="trailing" constant="11" id="ERV-Zn-TY4"/>
+                            <constraint firstItem="Agj-qL-AYf" firstAttribute="trailing" secondItem="Dgf-vX-mda" secondAttribute="trailing" id="IW2-SS-lqY"/>
+                            <constraint firstItem="c03-aq-l9I" firstAttribute="trailing" secondItem="Xk8-oC-XfZ" secondAttribute="trailing" id="Krx-3i-BS3"/>
+                            <constraint firstItem="CZq-MO-cDG" firstAttribute="top" secondItem="ORJ-oS-pVn" secondAttribute="bottom" constant="25" id="LF8-fu-5ke"/>
+                            <constraint firstItem="Dgf-vX-mda" firstAttribute="top" secondItem="CZq-MO-cDG" secondAttribute="bottom" constant="10" id="Q1j-Yh-aaD"/>
+                            <constraint firstItem="GhT-2y-OwQ" firstAttribute="top" secondItem="kES-6L-yFg" secondAttribute="bottom" constant="8" symbolic="YES" id="Rer-eF-ggb"/>
+                            <constraint firstItem="c03-aq-l9I" firstAttribute="leading" secondItem="Xk8-oC-XfZ" secondAttribute="leading" id="SFz-r6-id4"/>
+                            <constraint firstItem="Agj-qL-AYf" firstAttribute="top" secondItem="viG-jd-ib2" secondAttribute="top" id="VwR-ms-7sF"/>
+                            <constraint firstItem="c03-aq-l9I" firstAttribute="leading" secondItem="ORJ-oS-pVn" secondAttribute="trailing" constant="24" id="YRo-Kn-c9T"/>
+                            <constraint firstItem="ORJ-oS-pVn" firstAttribute="top" secondItem="Agj-qL-AYf" secondAttribute="bottom" constant="26" id="aMC-gh-aEA"/>
+                            <constraint firstItem="PO9-M3-CeY" firstAttribute="top" secondItem="GhT-2y-OwQ" secondAttribute="bottom" constant="9" id="aol-Cz-o2f"/>
+                            <constraint firstItem="Dgf-vX-mda" firstAttribute="bottom" secondItem="bZf-Pd-yW0" secondAttribute="bottom" id="bkI-bS-VYE"/>
+                            <constraint firstItem="kES-6L-yFg" firstAttribute="top" secondItem="bZf-Pd-yW0" secondAttribute="bottom" constant="42" id="cus-xf-T9q"/>
+                            <constraint firstItem="ORJ-oS-pVn" firstAttribute="top" secondItem="c03-aq-l9I" secondAttribute="top" id="do9-mt-jdK"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="bZf-Pd-yW0" secondAttribute="trailing" constant="2" id="dtW-mG-SSg"/>
+                            <constraint firstItem="kES-6L-yFg" firstAttribute="trailing" secondItem="bHx-lf-5SI" secondAttribute="trailingMargin" id="fgT-8U-V4U"/>
+                            <constraint firstItem="Xk8-oC-XfZ" firstAttribute="leading" secondItem="CZq-MO-cDG" secondAttribute="trailing" constant="32" id="gAp-kA-ggn"/>
+                            <constraint firstItem="Dgf-vX-mda" firstAttribute="leading" secondItem="nUM-av-0G1" secondAttribute="leading" id="gUB-XX-vz8"/>
+                            <constraint firstItem="CZq-MO-cDG" firstAttribute="centerX" secondItem="GhT-2y-OwQ" secondAttribute="centerX" id="ijj-kn-Auu"/>
+                            <constraint firstItem="CZq-MO-cDG" firstAttribute="top" secondItem="Xk8-oC-XfZ" secondAttribute="top" id="nvz-31-KJv"/>
+                            <constraint firstItem="Dgf-vX-mda" firstAttribute="trailing" secondItem="nUM-av-0G1" secondAttribute="trailing" id="o69-bj-IE4"/>
+                            <constraint firstItem="304-ds-PjA" firstAttribute="top" secondItem="bHx-lf-5SI" secondAttribute="topMargin" constant="82" id="oIr-7R-JAr"/>
+                            <constraint firstItem="kES-6L-yFg" firstAttribute="leading" secondItem="PO9-M3-CeY" secondAttribute="leading" id="qLD-7B-Tpq"/>
+                            <constraint firstItem="Agj-qL-AYf" firstAttribute="top" secondItem="2a6-sU-f7W" secondAttribute="bottom" constant="8" symbolic="YES" id="veR-e2-KK5"/>
+                            <constraint firstItem="PO9-M3-CeY" firstAttribute="top" secondItem="GhT-2y-OwQ" secondAttribute="bottom" constant="9" id="wGe-id-bP1"/>
+                            <constraint firstItem="kES-6L-yFg" firstAttribute="trailing" secondItem="PO9-M3-CeY" secondAttribute="trailing" id="y0Q-uh-pgj"/>
+                            <constraint firstItem="c03-aq-l9I" firstAttribute="top" secondItem="2a6-sU-f7W" secondAttribute="bottom" constant="93" id="y1W-eF-tdr"/>
+                            <constraint firstItem="304-ds-PjA" firstAttribute="leading" secondItem="bHx-lf-5SI" secondAttribute="leading" constant="740" id="yNU-64-g3l"/>
+                        </constraints>
                     </view>
                     <toolbarItems/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
@@ -377,30 +416,29 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SNc-Vb-k68">
-                                <rect key="frame" x="0.0" y="64" width="320" height="285"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="SNc-Vb-k68" secondAttribute="height" multiplier="64:57" id="t2f-J9-i6o"/>
-                                </constraints>
-                            </view>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="IvO-hi-gxY">
-                                <rect key="frame" x="0.0" y="377" width="320" height="54"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="IvO-hi-gxY">
+                                <rect key="frame" x="0.0" y="494" width="330" height="54"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="54" id="v5K-iQ-dWR"/>
+                                </constraints>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <view contentMode="scaleToFill" misplaced="YES" layoutMarginsFollowReadableWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SNc-Vb-k68">
+                                <rect key="frame" x="0.0" y="20" width="512" height="474"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="SNc-Vb-k68" firstAttribute="leading" secondItem="zpr-4a-lHp" secondAttribute="leading" id="Avm-F9-tVc"/>
-                            <constraint firstItem="SNc-Vb-k68" firstAttribute="leading" secondItem="IvO-hi-gxY" secondAttribute="leading" id="BwP-bc-evV"/>
-                            <constraint firstItem="COB-p6-iQ6" firstAttribute="top" secondItem="IvO-hi-gxY" secondAttribute="bottom" constant="137" id="LG4-FI-j7l"/>
-                            <constraint firstItem="IvO-hi-gxY" firstAttribute="top" secondItem="SNc-Vb-k68" secondAttribute="bottom" constant="28" id="Ymc-3x-hoE"/>
-                            <constraint firstAttribute="trailing" secondItem="SNc-Vb-k68" secondAttribute="trailing" id="kxE-P4-oNK"/>
-                            <constraint firstItem="SNc-Vb-k68" firstAttribute="trailing" secondItem="IvO-hi-gxY" secondAttribute="trailing" id="lIl-X5-BUY"/>
-                            <constraint firstItem="SNc-Vb-k68" firstAttribute="top" secondItem="OLI-SR-PXl" secondAttribute="bottom" constant="44" id="oJF-Bx-tML"/>
+                            <constraint firstAttribute="bottom" secondItem="IvO-hi-gxY" secondAttribute="bottom" constant="20" symbolic="YES" id="3kj-vy-DYe"/>
+                            <constraint firstAttribute="trailing" secondItem="SNc-Vb-k68" secondAttribute="trailing" id="fFY-5d-5oW"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="IvO-hi-gxY" secondAttribute="trailing" constant="-26" id="gcB-Ez-dmx"/>
+                            <constraint firstItem="SNc-Vb-k68" firstAttribute="top" secondItem="OLI-SR-PXl" secondAttribute="bottom" id="vor-n4-98M"/>
+                            <constraint firstItem="IvO-hi-gxY" firstAttribute="top" secondItem="SNc-Vb-k68" secondAttribute="bottom" id="xPh-0f-lNM"/>
+                            <constraint firstItem="SNc-Vb-k68" firstAttribute="leading" secondItem="zpr-4a-lHp" secondAttribute="leading" id="yzg-aO-wmn"/>
                         </constraints>
                     </view>
                     <connections>
@@ -411,7 +449,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mnL-MY-hUw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2731.875" y="-401.25"/>
+            <point key="canvasLocation" x="2731.875" y="-401.40845070422534"/>
         </scene>
         <!--食材リスト-->
         <scene sceneID="2Hl-PZ-efe">
