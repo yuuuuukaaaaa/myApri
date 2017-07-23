@@ -11,6 +11,8 @@ import AVFoundation
 
 class CameraViewController: UIViewController,AVCaptureMetadataOutputObjectsDelegate,XMLParserDelegate {
     
+    let myApp = UIApplication.shared.delegate as! AppDelegate
+    
     @IBOutlet weak var previewView: UIView!
     @IBOutlet weak var textField: UITextView!
     
@@ -24,6 +26,7 @@ class CameraViewController: UIViewController,AVCaptureMetadataOutputObjectsDeleg
         var barcode=num
         
         var url = URL(string:"http://shopping.yahooapis.jp/ShoppingWebService/V1/json/itemSearch?appid=dj00aiZpPUg2UFJNNWJLTThkaiZzPWNvbnN1bWVyc2VjcmV0Jng9ZTM-&category_id=2498&isbn=\(num)")
+        
         //インターネットに接続するためのリクエストを作成 url!は上記のurlのことを指している
         //エンターを押した時に情報をとってくるためのデータ
         var request = URLRequest(url: url!)
@@ -65,8 +68,8 @@ class CameraViewController: UIViewController,AVCaptureMetadataOutputObjectsDeleg
                 }
             }else {
                 result3 = result2["3"] as! NSDictionary
-                var globalName = result3
-                print(globalName)
+//                myApp.globalName.text = result3
+//                print(myApp.globalName)
                 
             }
 
@@ -92,8 +95,8 @@ class CameraViewController: UIViewController,AVCaptureMetadataOutputObjectsDeleg
                         print("写真が読込めません")
                     }else {
                         result6 = result5["Small"] as! String
-                        var globalPhoto = result6
-                        print(globalPhoto)
+                        myApp.globalPhoto = result6
+                        print(myApp.globalPhoto)
                     }
                 }
 
@@ -183,6 +186,13 @@ class CameraViewController: UIViewController,AVCaptureMetadataOutputObjectsDeleg
                 }
             }
         }
+        
+        
+        
+        
+        
+        
+        
     }
     
     //メンバ変数を設定

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		146DB125C3B9FE9A3E67AC16 /* Pods_myApriUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32ED3BF415B89DE26E1D78C0 /* Pods_myApriUITests.framework */; };
 		632994931F13D2130021834B /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 632994921F13D2130021834B /* CameraViewController.swift */; };
 		632EE0251F0A8A1700EA9E4B /* customCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 632EE0241F0A8A1700EA9E4B /* customCell.swift */; };
 		632EE0641F0B70CC00EA9E4B /* customCell2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 632EE0631F0B70CC00EA9E4B /* customCell2.swift */; };
@@ -27,6 +28,8 @@
 		6341CA8B1F2085EF00E7E4F8 /* noimage.png in Resources */ = {isa = PBXBuildFile; fileRef = 6341CA8A1F2085EF00E7E4F8 /* noimage.png */; };
 		63B690021F0A0FAD00984B6D /* FoodReadTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B690011F0A0FAD00984B6D /* FoodReadTableViewController.swift */; };
 		63B690041F0A0FDE00984B6D /* BuyReadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B690031F0A0FDE00984B6D /* BuyReadViewController.swift */; };
+		8D0660C89C7292954F0907AC /* Pods_myApri.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BE56DEF0206876F95190DEE /* Pods_myApri.framework */; };
+		92529A670CC4283363B59AF2 /* Pods_myApriTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB2AA989CEFDDB33E574DE89 /* Pods_myApriTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +50,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0BE56DEF0206876F95190DEE /* Pods_myApri.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_myApri.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		15168F59EBB0777D075C5C19 /* Pods-myApriUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-myApriUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-myApriUITests/Pods-myApriUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		280B6EEE352A147E4156CDAA /* Pods-myApriTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-myApriTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-myApriTests/Pods-myApriTests.debug.xcconfig"; sourceTree = "<group>"; };
+		280D5DF2C7AF1014C16651E9 /* Pods-myApri.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-myApri.release.xcconfig"; path = "Pods/Target Support Files/Pods-myApri/Pods-myApri.release.xcconfig"; sourceTree = "<group>"; };
+		2E4CC0D4621EDBCB8B9573CD /* Pods-myApriUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-myApriUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-myApriUITests/Pods-myApriUITests.release.xcconfig"; sourceTree = "<group>"; };
+		32ED3BF415B89DE26E1D78C0 /* Pods_myApriUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_myApriUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		632994921F13D2130021834B /* CameraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 		632EE0241F0A8A1700EA9E4B /* customCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = customCell.swift; sourceTree = "<group>"; };
 		632EE0631F0B70CC00EA9E4B /* customCell2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = customCell2.swift; sourceTree = "<group>"; };
@@ -73,6 +82,10 @@
 		6341CA8A1F2085EF00E7E4F8 /* noimage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = noimage.png; path = ../../../../Downloads/noimage.png; sourceTree = "<group>"; };
 		63B690011F0A0FAD00984B6D /* FoodReadTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoodReadTableViewController.swift; sourceTree = "<group>"; };
 		63B690031F0A0FDE00984B6D /* BuyReadViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuyReadViewController.swift; sourceTree = "<group>"; };
+		63CD26D21F2350DE00C40226 /* SDWebImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDWebImage.framework; path = "../../../Library/Developer/Xcode/DerivedData/myApri-akcfxyidpanvgjgltdamgireoxjr/Build/Products/Debug-iphonesimulator/SDWebImage/SDWebImage.framework"; sourceTree = "<group>"; };
+		8516E1B98814EAA1644B08B9 /* Pods-myApriTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-myApriTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-myApriTests/Pods-myApriTests.release.xcconfig"; sourceTree = "<group>"; };
+		87C4B7F93B751A78AC7985F0 /* Pods-myApri.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-myApri.debug.xcconfig"; path = "Pods/Target Support Files/Pods-myApri/Pods-myApri.debug.xcconfig"; sourceTree = "<group>"; };
+		EB2AA989CEFDDB33E574DE89 /* Pods_myApriTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_myApriTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +93,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8D0660C89C7292954F0907AC /* Pods_myApri.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -87,6 +101,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				92529A670CC4283363B59AF2 /* Pods_myApriTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -94,12 +109,24 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				146DB125C3B9FE9A3E67AC16 /* Pods_myApriUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		10635F9B47F6F84FA7E58836 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				63CD26D21F2350DE00C40226 /* SDWebImage.framework */,
+				0BE56DEF0206876F95190DEE /* Pods_myApri.framework */,
+				EB2AA989CEFDDB33E574DE89 /* Pods_myApriTests.framework */,
+				32ED3BF415B89DE26E1D78C0 /* Pods_myApriUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		6335C63F1F054E4C009DA84D = {
 			isa = PBXGroup;
 			children = (
@@ -109,6 +136,8 @@
 				6335C6621F054E4D009DA84D /* myApriTests */,
 				6335C66D1F054E4D009DA84D /* myApriUITests */,
 				6335C6491F054E4C009DA84D /* Products */,
+				A962D4E8DEA744873077D801 /* Pods */,
+				10635F9B47F6F84FA7E58836 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -164,6 +193,19 @@
 			path = myApriUITests;
 			sourceTree = "<group>";
 		};
+		A962D4E8DEA744873077D801 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				87C4B7F93B751A78AC7985F0 /* Pods-myApri.debug.xcconfig */,
+				280D5DF2C7AF1014C16651E9 /* Pods-myApri.release.xcconfig */,
+				280B6EEE352A147E4156CDAA /* Pods-myApriTests.debug.xcconfig */,
+				8516E1B98814EAA1644B08B9 /* Pods-myApriTests.release.xcconfig */,
+				15168F59EBB0777D075C5C19 /* Pods-myApriUITests.debug.xcconfig */,
+				2E4CC0D4621EDBCB8B9573CD /* Pods-myApriUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -171,9 +213,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6335C6731F054E4D009DA84D /* Build configuration list for PBXNativeTarget "myApri" */;
 			buildPhases = (
+				528A89146A799143B11EABCE /* [CP] Check Pods Manifest.lock */,
 				6335C6441F054E4C009DA84D /* Sources */,
 				6335C6451F054E4C009DA84D /* Frameworks */,
 				6335C6461F054E4C009DA84D /* Resources */,
+				47950DD3A0B8943A82ED8E71 /* [CP] Embed Pods Frameworks */,
+				F4816249F1AE1EA2256E827A /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -188,9 +233,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6335C6761F054E4D009DA84D /* Build configuration list for PBXNativeTarget "myApriTests" */;
 			buildPhases = (
+				18B25A6EEFEE5E2A1DD1B062 /* [CP] Check Pods Manifest.lock */,
 				6335C65B1F054E4D009DA84D /* Sources */,
 				6335C65C1F054E4D009DA84D /* Frameworks */,
 				6335C65D1F054E4D009DA84D /* Resources */,
+				D178EC655E24D953BA9778FB /* [CP] Embed Pods Frameworks */,
+				F1BF580CA00DD75A38AF0D87 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -206,9 +254,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6335C6791F054E4D009DA84D /* Build configuration list for PBXNativeTarget "myApriUITests" */;
 			buildPhases = (
+				E0290AE2F30CD7B02278EC6F /* [CP] Check Pods Manifest.lock */,
 				6335C6661F054E4D009DA84D /* Sources */,
 				6335C6671F054E4D009DA84D /* Frameworks */,
 				6335C6681F054E4D009DA84D /* Resources */,
+				4719B4FEB782EFCA90742143 /* [CP] Embed Pods Frameworks */,
+				E1B861967E380F32FE1CBE4B /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -295,6 +346,144 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		18B25A6EEFEE5E2A1DD1B062 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		4719B4FEB782EFCA90742143 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-myApriUITests/Pods-myApriUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		47950DD3A0B8943A82ED8E71 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-myApri/Pods-myApri-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		528A89146A799143B11EABCE /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		D178EC655E24D953BA9778FB /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-myApriTests/Pods-myApriTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E0290AE2F30CD7B02278EC6F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		E1B861967E380F32FE1CBE4B /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-myApriUITests/Pods-myApriUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F1BF580CA00DD75A38AF0D87 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-myApriTests/Pods-myApriTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F4816249F1AE1EA2256E827A /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-myApri/Pods-myApri-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		6335C6441F054E4C009DA84D /* Sources */ = {
@@ -466,6 +655,7 @@
 		};
 		6335C6741F054E4D009DA84D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 87C4B7F93B751A78AC7985F0 /* Pods-myApri.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 9J7MZ7H7KV;
@@ -480,6 +670,7 @@
 		};
 		6335C6751F054E4D009DA84D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 280D5DF2C7AF1014C16651E9 /* Pods-myApri.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 9J7MZ7H7KV;
@@ -494,6 +685,7 @@
 		};
 		6335C6771F054E4D009DA84D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 280B6EEE352A147E4156CDAA /* Pods-myApriTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -508,6 +700,7 @@
 		};
 		6335C6781F054E4D009DA84D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8516E1B98814EAA1644B08B9 /* Pods-myApriTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -522,6 +715,7 @@
 		};
 		6335C67A1F054E4D009DA84D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 15168F59EBB0777D075C5C19 /* Pods-myApriUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = 9J7MZ7H7KV;
@@ -536,6 +730,7 @@
 		};
 		6335C67B1F054E4D009DA84D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2E4CC0D4621EDBCB8B9573CD /* Pods-myApriUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = 9J7MZ7H7KV;

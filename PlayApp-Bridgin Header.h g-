@@ -1,0 +1,14 @@
+//
+//  PlayApp-Bridging-Header.h
+//  
+//
+//  Created by MacUser on 2017/07/22.
+//
+//
+
+#import <SDWebImage/UIImageView+WebCache.h>
+#ifndef PlayApp_Bridging_Header_h
+#define PlayApp_Bridging_Header_h
+
+
+#endif /* PlayApp_Bridging_Header_h */

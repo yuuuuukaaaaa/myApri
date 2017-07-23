@@ -8,8 +8,14 @@
 
 import UIKit
 import CoreData
+//import SDWebImage
 
 class FoodReadTableViewController: UIViewController {
+    
+    let myApp = UIApplication.shared.delegate as! AppDelegate
+    
+   
+
     
     //入力画面の指定
 
@@ -33,6 +39,14 @@ class FoodReadTableViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+   //  let imageURL = URL(string: "https://www.pakutaso.com/shared/img/thumb/dashPAKU0522_TP_V.jpg")
+   
+        let imageURL = URL(string: myApp.globalPhoto!)
+        let photo = myApp.globalPhoto!
+        let foodText = myApp.globalName!
+
+        
         //コアデータからデータの読み込み処理
         read()
     }
@@ -74,6 +88,16 @@ class FoodReadTableViewController: UIViewController {
         limitDateString = df.string(from: sender.date)
     }
     
+    
+    override func viewWillAppear(_ animated: Bool) {
+        //AppDelegateにアクセスするための基準
+        let myApp = UIApplication.shared.delegate as! AppDelegate
+        //プロパティの値をラベルに表示
+//        photo.image = "\((myApp.globalPhoto)!)"
+//        
+//        foodText.text = "\((myApp.globalName)!)"
+        
+    }
     
     
     

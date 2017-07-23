@@ -8,11 +8,12 @@
 
 import UIKit
 import CoreData
+//import SDWebImage
 
 
 
-class FoodViewController: UIViewController,UITableViewDelegate,UITableViewDataSource{
-    
+class FoodViewController: UIViewController,UITableViewDelegate,UITableViewDataSource,XMLParserDelegate{
+    let myApp = UIApplication.shared.delegate as! AppDelegate
     @IBOutlet weak var myTableView: UITableView!
     
     var foodArray : [FoodData] = []
@@ -57,14 +58,13 @@ class FoodViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
             cell.photo.image = UIImage(named: "noimage.png")
         }else{
             //指定された画像を表示
+            cell.photo.image = UIImage(named: "\(myApp.globalPhoto)")
             print(task.value(forKey: "photo")as!String)
         }
         
         cell.name?.text = task.value(forKey: "name")as!String
-        
         cell.dose?.text = task.value(forKey: "dose")as!String
-
-        
+       
         //保存方法表記
         var saveindex = task.value(forKey: "savetype")as!Int
         
@@ -86,10 +86,7 @@ class FoodViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         let changeInt = Int(getIntervalDays(date: task.value(forKey: "buyDate") as! Date))
         let changeInt1 = String(changeInt)
         cell.limitDate?.text = ("\(changeInt1)日")
-        
-//        cell.limitDate?.text = getIntervalDays(date: task.value(forKey: "limitDate") as! Date)
-       
-        
+
         //購入日から本日までのカウント
         let df1 = DateFormatter()
         df1.dateFormat = "yyyy/MM/dd"
@@ -98,9 +95,6 @@ class FoodViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         let changeInt2 = Int(getIntervalDays1(date: task.value(forKey: "limitDate") as! Date))
         let changeInt3 = String(changeInt2)
         cell.buyDate?.text = ("\(changeInt3)日")
-        
-//        cell.buyDate?.text = (date: task.value(forKey: "limitDate")  as! Date)
-        
         
         print(dataDate)
         print(dataDate1)

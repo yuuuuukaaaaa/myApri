@@ -15,9 +15,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     //グローバル変数指定
     //名前
-    var globalName:String?
+    var globalName:String? = ""
     //写真    
-    var globalPhoto:String?
+    var globalPhoto:String? = ""
     
 
 
