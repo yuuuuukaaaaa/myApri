@@ -8,7 +8,7 @@
 
 import UIKit
 import CoreData
-//import SDWebImage
+import SDWebImage
 
 class FoodReadTableViewController: UIViewController {
     
@@ -49,6 +49,7 @@ class FoodReadTableViewController: UIViewController {
         
         //コアデータからデータの読み込み処理
         read()
+        
     }
     
     
@@ -93,9 +94,14 @@ class FoodReadTableViewController: UIViewController {
         //AppDelegateにアクセスするための基準
         let myApp = UIApplication.shared.delegate as! AppDelegate
         //プロパティの値をラベルに表示
-//        photo.image = "\((myApp.globalPhoto)!)"
-//        
-//        foodText.text = "\((myApp.globalName)!)"
+        
+        let url = URL(string: myApp.globalPhoto! as! String);
+        var err: NSError?;
+        let imageData :Data = (try! Data(contentsOf: url!,options: NSData.ReadingOptions.mappedIfSafe))
+        let img = UIImage(data:imageData)
+        
+        photo.image  = img
+        foodText.text = "\((myApp.globalName)!)"
         
     }
     
@@ -119,7 +125,7 @@ class FoodReadTableViewController: UIViewController {
         let newRecord = NSManagedObject(entity : FoodData!, insertInto:viewContext)
         
         //値をセット
-        newRecord.setValue(photo.image, forKey: "photo")//値を代入
+        newRecord.setValue(myApp.globalPhoto!, forKey: "photo")//値を代入
         newRecord.setValue(foodText.text, forKey: "name")//値を代入
         newRecord.setValue(doseText.text, forKey: "dose")//値を代入
         newRecord.setValue(savetypeBtn.selectedSegmentIndex, forKey: "savetype")//値を代入

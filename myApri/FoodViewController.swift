@@ -7,10 +7,8 @@
 //
 
 import UIKit
-import SDWebImage
 import CoreData
-//import SDWebImage
-
+import SDWebImage
 
 
 class FoodViewController: UIViewController,UITableViewDelegate,UITableViewDataSource,XMLParserDelegate{
@@ -27,9 +25,6 @@ class FoodViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         
     }
     @IBOutlet weak var food: UIImageView!
-    
-    
-    
     
     override func viewWillAppear(_ animated: Bool) {
         //coredataからのデータ取得
@@ -60,12 +55,14 @@ class FoodViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         }else{
             //指定された画像を表示
             cell.photo.image = UIImage(named: "\(myApp.globalPhoto)")
-            print(task.value(forKey: "photo")as!String)
+            print(task.value(forKey: "photo")as! String)
         }
         
         cell.name?.text = task.value(forKey: "name")as!String
+        
         cell.dose?.text = task.value(forKey: "dose")as!String
-       
+        
+        
         //保存方法表記
         var saveindex = task.value(forKey: "savetype")as!Int
         
@@ -79,7 +76,7 @@ class FoodViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         default:
             cell.savetype.text = "なし"
         }
-       
+        
         //賞味期限
         let df = DateFormatter()
         df.dateFormat = "yyyy/MM/dd"
@@ -87,7 +84,10 @@ class FoodViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         let changeInt = Int(getIntervalDays(date: task.value(forKey: "buyDate") as! Date))
         let changeInt1 = String(changeInt)
         cell.limitDate?.text = ("\(changeInt1)日")
-
+        
+        //        cell.limitDate?.text = getIntervalDays(date: task.value(forKey: "limitDate") as! Date)
+        
+        
         //購入日から本日までのカウント
         let df1 = DateFormatter()
         df1.dateFormat = "yyyy/MM/dd"
@@ -97,18 +97,21 @@ class FoodViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         let changeInt3 = String(changeInt2)
         cell.buyDate?.text = ("\(changeInt3)日")
         
+        //        cell.buyDate?.text = (date: task.value(forKey: "limitDate")  as! Date)
+        
+        
         print(dataDate)
         print(dataDate1)
-
-
         
- //  賞味期限デバックプリント
+        
+        
+        //  賞味期限デバックプリント
         print(getIntervalDays(date: task.value(forKey: "buyDate") as! Date))
         
         // 購入日から今日までの日数カウントのデバックプリント
         print(getIntervalDays1(date: task.value(forKey: "limitDate") as! Date))
         
-
+        
         
         return cell
     }
@@ -128,7 +131,7 @@ class FoodViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         } else {
             retInterval = date?.timeIntervalSince(anotherDay!)
         }
-
+        
         let ret = retInterval/86400
         
         return floor(ret)  // n日
@@ -150,7 +153,7 @@ class FoodViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         
         return floor(ret - ret - ret + 1)  // n日
     }
-
+    
     
     
     
@@ -160,7 +163,7 @@ class FoodViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
         do {
             foodArray = try context.fetch(FoodData.fetchRequest())
-            }
+        }
         catch{
             print("Fetching Failed")
         }
@@ -169,38 +172,38 @@ class FoodViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-            let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-            
-            
-            if editingStyle == .delete{
-                let task = foodArray[indexPath.row]
-                context.delete(task)
-                (UIApplication.shared.delegate as! AppDelegate).saveContext()
-                do {
-                    foodArray = try context.fetch(FoodData.fetchRequest())
-                }catch{
-                    print("Fetching Failed")
-                }
+        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        
+        
+        if editingStyle == .delete{
+            let task = foodArray[indexPath.row]
+            context.delete(task)
+            (UIApplication.shared.delegate as! AppDelegate).saveContext()
+            do {
+                foodArray = try context.fetch(FoodData.fetchRequest())
+            }catch{
+                print("Fetching Failed")
             }
-        tableView.reloadData()
         }
-
+        tableView.reloadData()
+    }
     
-
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-
+    
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destinationViewController.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }

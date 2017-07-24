@@ -63,13 +63,19 @@ class CameraViewController: UIViewController,AVCaptureMetadataOutputObjectsDeleg
                     print("名前が読込めません")
                 }else{
                     result3 = result2["0"] as! NSDictionary
-                    var globalName = result3
-                    print(globalName["Name"])
+                    var result7:String
+                    result7 = result3["Name"] as! String
+                    myApp.globalName = result7
+                    print(myApp.globalName)
+                
+
                 }
             }else {
                 result3 = result2["3"] as! NSDictionary
-//                myApp.globalName.text = result3
-//                print(myApp.globalName)
+                var result7:String
+                result7 = result3["Name"] as! String
+                myApp.globalName = result7
+                print(myApp.globalName)
                 
             }
 
