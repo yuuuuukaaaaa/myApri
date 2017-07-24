@@ -8,9 +8,9 @@
 
 import UIKit
 import CoreData
-import SDWebImage
 
 class FoodReadTableViewController: UIViewController {
+    
     
     let myApp = UIApplication.shared.delegate as! AppDelegate
     
@@ -35,28 +35,30 @@ class FoodReadTableViewController: UIViewController {
     
     var limitDateString: String = ""
     
+    var selectedIndex = -1
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-   //  let imageURL = URL(string: "https://www.pakutaso.com/shared/img/thumb/dashPAKU0522_TP_V.jpg")
-   
+    
         let imageURL = URL(string: myApp.globalPhoto!)
         let photo = myApp.globalPhoto!
         let foodText = myApp.globalName!
 
-        
+       
         //コアデータからデータの読み込み処理
-        read()
+       read()
+
         
     }
     
     
     //データ接続
     
-    
+  
     @IBAction func foodText(_ sender: UITextField) {
+        
     }
     
     @IBAction func doseText(_ sender: UITextField) {
@@ -91,17 +93,24 @@ class FoodReadTableViewController: UIViewController {
     
     
     override func viewWillAppear(_ animated: Bool) {
+        
         //AppDelegateにアクセスするための基準
         let myApp = UIApplication.shared.delegate as! AppDelegate
         //プロパティの値をラベルに表示
         
-        let url = URL(string: myApp.globalPhoto! as! String);
-        var err: NSError?;
+        if selectedIndex == 1 {
+        let url = URL(string: myApp.globalPhoto! as! String)
+        
+        var err: NSError?
         let imageData :Data = (try! Data(contentsOf: url!,options: NSData.ReadingOptions.mappedIfSafe))
         let img = UIImage(data:imageData)
         
         photo.image  = img
+        
         foodText.text = "\((myApp.globalName)!)"
+        }else {
+            
+        }
         
     }
     
@@ -131,17 +140,24 @@ class FoodReadTableViewController: UIViewController {
         newRecord.setValue(savetypeBtn.selectedSegmentIndex, forKey: "savetype")//値を代入
         newRecord.setValue(buyDate.date, forKey: "buyDate")//値を代入
         newRecord.setValue(limitDate.date, forKey: "limitDate")//値を代入
+        
+        
         do{
             //レコード（行）の即時保存
             try viewContext.save()
+            
         }catch{
+            
         }
-        
+        myApp.globalPhoto = ""
+        myApp.globalName = ""
+
     }
     
     
     //既に存在すつデータの読み込み処理
     func read(){
+        
         //AppDelegateを用意しておく
         let appDelegate: AppDelegate = UIApplication.shared.delegate as! AppDelegate
         
@@ -166,6 +182,7 @@ class FoodReadTableViewController: UIViewController {
                     
                     
                     print("photo:\(photo) name:\(foodText) dose:\(doseText) savetype:\(savetypeBtn) buyDate:\(buyDate) limitDate:\(limitDate)")
+                    
                 }
                 
         }catch{

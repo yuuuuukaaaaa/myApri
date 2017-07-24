@@ -207,6 +207,12 @@ class CameraViewController: UIViewController,AVCaptureMetadataOutputObjectsDeleg
     }
     
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        var vc = segue.destination as! FoodReadTableViewController
+        
+        vc.selectedIndex = 1
+    }
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

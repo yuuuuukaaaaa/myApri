@@ -8,7 +8,6 @@
 
 import UIKit
 import CoreData
-import SDWebImage
 
 
 class FoodViewController: UIViewController,UITableViewDelegate,UITableViewDataSource,XMLParserDelegate{
@@ -48,15 +47,20 @@ class FoodViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         let task = foodArray[indexPath.row]
         
         //画像イメージ
+        print(task.value(forKey: "photo"))
         
-        if task.value(forKey: "photo") == nil {
+        var taskString = task.value(forKey: "photo")! as! String
+        if taskString == "" {
             //no imageを表示
             cell.photo.image = UIImage(named: "noimage.png")
         }else{
             //指定された画像を表示
-            cell.photo.image = UIImage(named: "\(myApp.globalPhoto)")
+            url = myApp.globalPhoto as! String
+            cell.photo.image = UIImage(named: "url1)")
             print(task.value(forKey: "photo")as! String)
         }
+        
+
         
         cell.name?.text = task.value(forKey: "name")as!String
         
@@ -97,8 +101,6 @@ class FoodViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         let changeInt3 = String(changeInt2)
         cell.buyDate?.text = ("\(changeInt3)日")
         
-        //        cell.buyDate?.text = (date: task.value(forKey: "limitDate")  as! Date)
-        
         
         print(dataDate)
         print(dataDate1)
@@ -111,9 +113,11 @@ class FoodViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         // 購入日から今日までの日数カウントのデバックプリント
         print(getIntervalDays1(date: task.value(forKey: "limitDate") as! Date))
         
-        
-        
+   
+
         return cell
+        
+        
     }
     
     /**
@@ -190,6 +194,7 @@ class FoodViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     
     
     
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
