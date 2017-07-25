@@ -149,8 +149,8 @@ class FoodReadTableViewController: UIViewController {
         }catch{
             
         }
-        myApp.globalPhoto = ""
-        myApp.globalName = ""
+        myApp.globalPhoto = "" as! String
+        myApp.globalName = "" as! String
 
     }
     

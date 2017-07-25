@@ -395,7 +395,7 @@
                     </items>
                 </navigationBar>
             </objects>
-            <point key="canvasLocation" x="2730" y="388.73239436619718"/>
+            <point key="canvasLocation" x="2786" y="367"/>
         </scene>
         <!--Camera View Controller-->
         <scene sceneID="NJX-YM-mH4">
@@ -442,7 +442,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mnL-MY-hUw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2731.875" y="-401.40845070422534"/>
+            <point key="canvasLocation" x="2784" y="-402"/>
         </scene>
         <!--食材リスト-->
         <scene sceneID="2Hl-PZ-efe">
@@ -616,7 +616,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tKn-Iq-HiK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1763" y="349"/>
+            <point key="canvasLocation" x="1836" y="367"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="r9V-Lb-iVP">
@@ -653,7 +653,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X1C-j4-tTU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1040.8" y="366.56671664167919"/>
+            <point key="canvasLocation" x="954" y="367"/>
         </scene>
         <!--買い物リスト-->
         <scene sceneID="a8m-JT-hbU">
