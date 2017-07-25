@@ -25,7 +25,7 @@ class FoodViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
        myTableView.delegate = self
         
     }
-    @IBOutlet weak var food: UIImageView!
+//    @IBOutlet weak var food: UIImageView!
     
     
     
@@ -56,15 +56,31 @@ class FoodViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         //画像イメージ
         print(task.value(forKey: "photo"))
         
-        var taskString = task.value(forKey: "photo")! as! String
-        if taskString == "" {
+//        var taskString = task.value(forKey: "photo")! as! String
+        if task.value(forKey: "photo") == nil{
             //no imageを表示
             cell.photo.image = UIImage(named: "noimage.png")
         }else{
             //指定された画像を表示
-            url = myApp.globalPhoto as! String
-            cell.photo.image = UIImage(named: "url1)")
-            print(task.value(forKey: "photo")as! String)
+            var taskString = task.value(forKey: "photo")! as! String
+
+            if taskString == ""{
+                //no imageを表示
+                cell.photo.image = UIImage(named: "noimage.png")
+            }else{
+            
+                //指定された画像を表示
+                var taskString = task.value(forKey: "photo")! as! String
+                let url = URL(string: taskString)
+                
+                var err: NSError?
+                let imageData :Data = (try! Data(contentsOf: url!,options: NSData.ReadingOptions.mappedIfSafe))
+                let img = UIImage(data:imageData)
+                
+                cell.photo.image  = img
+//              cell.photo.image = UIImage(named: "url)")
+                print(task.value(forKey: "photo")as! String)
+            }
         }
             
         cell.name?.text = task.value(forKey: "name")as!String
