@@ -1,6 +1,0 @@
-framework module Pods_myApriTests {
-  umbrella header "Pods-myApriTests-umbrella.h"
-
-  export *
-  module * { export * }
-}

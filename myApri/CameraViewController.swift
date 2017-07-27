@@ -63,11 +63,15 @@ class CameraViewController: UIViewController,AVCaptureMetadataOutputObjectsDeleg
                     print("名前が読込めません")
                 }else{
                     result3 = result2["0"] as! NSDictionary
+                    print(result3)
                     var result7:String
+                    
+                    if result3["Name"] != nil{
                     result7 = result3["Name"] as! String
+                    print(result7)
                     myApp.globalName = result7
                     print(myApp.globalName)
-                
+                    }
 
                 }
             }else {
@@ -84,21 +88,21 @@ class CameraViewController: UIViewController,AVCaptureMetadataOutputObjectsDeleg
             var result4:NSDictionary
             if result2["1"] == nil {
                 //デバックに読み込めませんでしたと表示
-                print("写真が読込めません")
+                print("写真が読込めません1")
             }else{
                 result4 = result2["1"] as! NSDictionary
                 
                 var result5:NSDictionary
                 if result4["Image"] == nil {
                     //デバックに読み込めませんでしたと表示
-                    print("写真が読込めません")
+                    print("写真が読込めません2")
                 }else {
                     result5 = result4["Image"] as! NSDictionary
                     
                     var result6:String
                     if result5["Small"] == nil {
                         //デバックに読み込めませんでしたと表示
-                        print("写真が読込めません")
+                        print("写真が読込めません3")
                     }else {
                         result6 = result5["Small"] as! String
                         myApp.globalPhoto = result6
